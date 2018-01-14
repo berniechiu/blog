@@ -79,4 +79,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/berniechiu/blog.git
-  branch: master
+  branch: gh-pages
