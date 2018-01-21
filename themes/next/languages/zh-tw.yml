@@ -34,6 +34,7 @@ post:
   wordcount: 字數統計
   min2read: 閱讀時長
   totalcount: Site words total count
+  totaltime: Site reading time
   copyright:
     author: Post author
     link: Post link
