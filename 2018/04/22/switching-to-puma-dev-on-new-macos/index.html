@@ -102,24 +102,24 @@
 
 
 
-  <meta name="description" content="When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a me">
+  <meta name="description" content="Since I’m getting a new Mac recently, I have realized that pow is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tips for Playing around with Rubber Gem for AWS Deployment">
-<meta property="og:url" content="https://berniechiu.github.io/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/index.html">
+<meta property="og:title" content="Switching to puma-dev on New MacOS">
+<meta property="og:url" content="https://berniechiu.github.io/2018/04/22/switching-to-puma-dev-on-new-macos/index.html">
 <meta property="og:site_name" content="BC Blog">
-<meta property="og:description" content="When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a me">
+<meta property="og:description" content="Since I’m getting a new Mac recently, I have realized that pow is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alter">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-22T05:21:55.266Z">
+<meta property="og:updated_time" content="2018-04-22T05:21:55.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tips for Playing around with Rubber Gem for AWS Deployment">
-<meta name="twitter:description" content="When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a me">
+<meta name="twitter:title" content="Switching to puma-dev on New MacOS">
+<meta name="twitter:description" content="Since I’m getting a new Mac recently, I have realized that pow is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alter">
 
 
 
 
 
 
-  <link rel="canonical" href="https://berniechiu.github.io/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/"/>
+  <link rel="canonical" href="https://berniechiu.github.io/2018/04/22/switching-to-puma-dev-on-new-macos/"/>
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>Tips for Playing around with Rubber Gem for AWS Deployment | BC Blog</title>
+  <title>Switching to puma-dev on New MacOS | BC Blog</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2018/04/22/switching-to-puma-dev-on-new-macos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bernie Chiu">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Tips for Playing around with Rubber Gem for AWS Deployment
+          <h1 class="post-title" itemprop="name headline">Switching to puma-dev on New MacOS
               
             
           </h1>
@@ -328,7 +328,7 @@
                 
               
 
-              <time title="Created: 2013-12-11 19:47:44" itemprop="dateCreated datePublished" datetime="2013-12-11T19:47:44+08:00">2013-12-11</time>
+              <time title="Created: 2018-04-22 12:47:58" itemprop="dateCreated datePublished" datetime="2018-04-22T12:47:58+08:00">2018-04-22</time>
             
 
             
@@ -362,13 +362,14 @@
       
 
       
-        <p>When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a mess.</p>
-<p>First of all, default Instance is <strong>m1.medium</strong> for VM Image type, which is not free, so we have to set the YAML file to <strong>t1.micro</strong> according to Amazon Free Tier description.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image_type:</span> <span class="string">t1.micro</span></span><br><span class="line"><span class="attr">image_id:</span> <span class="string">'ami-5e215b0c'</span></span><br></pre></td></tr></table></figure>
-<p>Besides, newly created account has only 5 limited <strong>Security Groups</strong> for us to set up, so we have to make sure the Rubber does not generate more than that number.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_security_groups:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>Somehow the multiple intances have trouble connecting to each other, we might want to config the <code>pg_hba.conf</code> file to allow IP connection.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br></pre></td></tr></table></figure>
+        <p>Since I’m getting a new Mac recently, I have realized that <a href="http://pow.cx/manual.html#section_6" target="_blank" rel="noopener">pow</a> is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alternative at this time being.</p>
+<h2 id="Getting-Puma-Dev-on-MacOS"><a href="#Getting-Puma-Dev-on-MacOS" class="headerlink" title="Getting Puma-Dev on MacOS"></a>Getting Puma-Dev on MacOS</h2><h3 id="Install-Puma-Dev"><a href="#Install-Puma-Dev" class="headerlink" title="Install Puma-Dev"></a>Install Puma-Dev</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install puma-dev</span><br></pre></td></tr></table></figure>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ puma-dev -setup</span><br></pre></td></tr></table></figure>
+<h3 id="Link-Puma-Dev-Application"><a href="#Link-Puma-Dev-Application" class="headerlink" title="Link Puma-Dev Application"></a>Link Puma-Dev Application</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /your/app/path</span><br><span class="line">$ puma-dev link</span><br></pre></td></tr></table></figure>
+<h3 id="Start-Puma-Dev-Server"><a href="#Start-Puma-Dev-Server" class="headerlink" title="Start Puma-Dev Server"></a>Start Puma-Dev Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ puma-dev -d localhost</span><br><span class="line"></span><br><span class="line"><span class="comment">#=&gt; * Directory for apps: /Users/user/.puma-dev</span></span><br><span class="line"><span class="comment">#=&gt; * Domains: localhost</span></span><br><span class="line"><span class="comment">#=&gt; * DNS Server port: 9253</span></span><br><span class="line"><span class="comment">#=&gt; * HTTP Server port: 9280</span></span><br><span class="line"><span class="comment">#=&gt; * HTTPS Server port: 9283</span></span><br></pre></td></tr></table></figure>
+<p>Note: <a href="https://ma.ttias.be/chrome-force-dev-domains-https-via-preloaded-hsts/" target="_blank" rel="noopener">Why using default .dev is an issue</a></p>
+<h3 id="SSL-Certificate-Issue"><a href="#SSL-Certificate-Issue" class="headerlink" title="SSL Certificate Issue"></a>SSL Certificate Issue</h3><p>If you encounter SSL issue in browers, add the trusted cert in your MacOS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">security add-trusted-cert -k login.keychain-db ~/Library/Application\ Support/io.puma.dev/cert.pem</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -396,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2013/12/03/protect-ruby-array-object-from-class-instance/" rel="next" title="Protect Ruby Array Object from Class Instance">
-                <i class="fa fa-chevron-left"></i> Protect Ruby Array Object from Class Instance
+              <a href="/blog/2016/01/31/installing-postgress-on-mac/" rel="next" title="Installing PostgresDB on Mac">
+                <i class="fa fa-chevron-left"></i> Installing PostgresDB on Mac
               </a>
             
           </div>
@@ -405,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2013/12/27/common-mongodb-commands-for-restore-and-backup/" rel="prev" title="Common MongoDB Commands for Restore and Backup">
-                Common MongoDB Commands for Restore and Backup <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -457,8 +454,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Getting-Puma-Dev-on-MacOS"><span class="nav-number">1.</span> <span class="nav-text">Getting Puma-Dev on MacOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Puma-Dev"><span class="nav-number">1.1.</span> <span class="nav-text">Install Puma-Dev</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup"><span class="nav-number">1.2.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Puma-Dev-Application"><span class="nav-number">1.3.</span> <span class="nav-text">Link Puma-Dev Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-Puma-Dev-Server"><span class="nav-number">1.4.</span> <span class="nav-text">Start Puma-Dev Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL-Certificate-Issue"><span class="nav-number">1.5.</span> <span class="nav-text">SSL Certificate Issue</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

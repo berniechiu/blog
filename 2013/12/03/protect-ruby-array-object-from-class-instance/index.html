@@ -2,6 +2,9 @@
 
 
 
+
+
+
   
 
 
@@ -9,7 +12,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +52,19 @@
 
 <link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+<link href="/blog/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.2.0">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.0.1" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.2.0" color="#222">
 
 
 
@@ -76,7 +79,7 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '6.0.1',
+    version: '6.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,18 +102,14 @@
 
 
 
-  
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-<meta name="description" content="12345678910111213141516171819202122class PlayingCard  SUITS = %w&amp;#123; clubs diamonds hearts spades &amp;#125;  RANKS = %w&amp;#123; 2 3 4 5 6 7 8 9 10 J Q K A &amp;#125;  class Deck    def cards      @cards.to_e">
+  <meta name="description" content="12345678910111213141516171819202122class PlayingCard  SUITS = %w&amp;#123; clubs diamonds hearts spades &amp;#125;  RANKS = %w&amp;#123; 2 3 4 5 6 7 8 9 10 J Q K A &amp;#125;  class Deck    def cards      @cards.to_e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Protect Ruby Array Object from Class Instance">
 <meta property="og:url" content="https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/index.html">
 <meta property="og:site_name" content="BC Blog">
 <meta property="og:description" content="12345678910111213141516171819202122class PlayingCard  SUITS = %w&amp;#123; clubs diamonds hearts spades &amp;#125;  RANKS = %w&amp;#123; 2 3 4 5 6 7 8 9 10 J Q K A &amp;#125;  class Deck    def cards      @cards.to_e">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-21T11:46:32.000Z">
+<meta property="og:updated_time" content="2018-04-22T05:21:55.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Protect Ruby Array Object from Class Instance">
 <meta name="twitter:description" content="12345678910111213141516171819202122class PlayingCard  SUITS = %w&amp;#123; clubs diamonds hearts spades &amp;#125;  RANKS = %w&amp;#123; 2 3 4 5 6 7 8 9 10 J Q K A &amp;#125;  class Deck    def cards      @cards.to_e">
@@ -129,6 +128,7 @@
     sidebar: "",
   };
 </script>
+
   <title>Protect Ruby Array Object from Class Instance | BC Blog</title>
   
 
@@ -189,12 +189,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">BC Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -206,7 +206,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -214,38 +214,50 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -254,6 +266,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -290,11 +303,19 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Protect Ruby Array Object from Class Instance</h1>
+          <h1 class="post-title" itemprop="name headline">Protect Ruby Array Object from Class Instance
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -302,10 +323,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-03T19:44:54+08:00">2013-12-03</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2013-12-03 19:44:54" itemprop="dateCreated datePublished" datetime="2013-12-03T19:44:54+08:00">2013-12-03</time>
             
 
             
@@ -340,10 +363,13 @@
 
       
         <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PlayingCard</span></span></span><br><span class="line">  SUITS = <span class="string">%w&#123; clubs diamonds hearts spades &#125;</span></span><br><span class="line">  RANKS = <span class="string">%w&#123; 2 3 4 5 6 7 8 9 10 J Q K A &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Deck</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards</span></span></span><br><span class="line">      @cards.to_enum</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(n=<span class="number">1</span>)</span></span></span><br><span class="line">      @cards = []</span><br><span class="line">      SUITS.cycle(n) <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">        RANKS.cycle(<span class="number">1</span>) <span class="keyword">do</span> <span class="params">|r|</span></span><br><span class="line">          @cards &lt;&lt; <span class="string">"<span class="subst">#&#123;r&#125;</span> of <span class="subst">#&#123;s&#125;</span>"</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">deck = PlayingCard::Deck.new</span><br><span class="line">deck.cards &lt;&lt; <span class="string">"JOKER!!"</span> <span class="comment">#=&gt; FAIL!!</span></span><br></pre></td></tr></table></figure>
-<p>Playing around with this, knowing without the line <code>@cards.to_enum</code>, I could actually input a new item in the array with ease, but sometimes we don’t want that. Therefore, given the enumerator like <code>to_enum</code> will allow for iterations through the array without absorbing changes.</p>
+<p>Playing around with this, knowing without the line <a href="mailto:`@cards.t" target="_blank" rel="noopener">`@cards.t</a>o_enum<code>, I could actually input a new item in the array with ease, but sometimes we don&#39;t want that. Therefore, given the enumerator like</code>to_enum` will allow for iterations through the array without absorbing changes.</p>
 
       
     </div>
+
+    
+
     
     
     
@@ -442,7 +468,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -458,19 +484,17 @@
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/berniechiu" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/berniechiu" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -503,8 +527,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
 
@@ -516,20 +540,17 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
 
 
 
 
         
+
 
 
 
@@ -604,25 +625,25 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.2.0"></script>
 
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.0.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.0.1"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.2.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.2.0"></script>
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.0.1"></script>
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.2.0"></script>
 
 
 
@@ -668,6 +689,8 @@
   
 
   
+  
+
   
 
   

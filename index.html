@@ -2,6 +2,9 @@
 
 
 
+
+
+
   
 
 
@@ -9,7 +12,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +52,19 @@
 
 <link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+<link href="/blog/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.2.0">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.0.1" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.2.0" color="#222">
 
 
 
@@ -76,7 +79,7 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '6.0.1',
+    version: '6.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,11 +102,7 @@
 
 
 
-  
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="BC Blog">
 <meta property="og:url" content="https://berniechiu.github.io/index.html">
 <meta property="og:site_name" content="BC Blog">
@@ -125,6 +124,7 @@
     sidebar: "",
   };
 </script>
+
   <title>BC Blog</title>
   
 
@@ -186,12 +186,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">BC Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -203,7 +203,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -211,38 +211,50 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -251,9 +263,153 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2018/04/22/switching-to-puma-dev-on-new-macos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/04/22/switching-to-puma-dev-on-new-macos/" itemprop="url">
+                  Switching to puma-dev on New MacOS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-22 12:47:58" itemprop="dateCreated datePublished" datetime="2018-04-22T12:47:58+08:00">2018-04-22</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Since I’m getting a new Mac recently, I have realized that <a href="http://pow.cx/manual.html#section_6" target="_blank" rel="noopener">pow</a> is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alternative at this time being.</p>
+<h2 id="Getting-Puma-Dev-on-MacOS"><a href="#Getting-Puma-Dev-on-MacOS" class="headerlink" title="Getting Puma-Dev on MacOS"></a>Getting Puma-Dev on MacOS</h2><h3 id="Install-Puma-Dev"><a href="#Install-Puma-Dev" class="headerlink" title="Install Puma-Dev"></a>Install Puma-Dev</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install puma-dev</span><br></pre></td></tr></table></figure>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ puma-dev -setup</span><br></pre></td></tr></table></figure>
+<h3 id="Link-Puma-Dev-Application"><a href="#Link-Puma-Dev-Application" class="headerlink" title="Link Puma-Dev Application"></a>Link Puma-Dev Application</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /your/app/path</span><br><span class="line">$ puma-dev link</span><br></pre></td></tr></table></figure>
+<h3 id="Start-Puma-Dev-Server"><a href="#Start-Puma-Dev-Server" class="headerlink" title="Start Puma-Dev Server"></a>Start Puma-Dev Server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ puma-dev -d localhost</span><br><span class="line"></span><br><span class="line"><span class="comment">#=&gt; * Directory for apps: /Users/user/.puma-dev</span></span><br><span class="line"><span class="comment">#=&gt; * Domains: localhost</span></span><br><span class="line"><span class="comment">#=&gt; * DNS Server port: 9253</span></span><br><span class="line"><span class="comment">#=&gt; * HTTP Server port: 9280</span></span><br><span class="line"><span class="comment">#=&gt; * HTTPS Server port: 9283</span></span><br></pre></td></tr></table></figure>
+<p>Note: <a href="https://ma.ttias.be/chrome-force-dev-domains-https-via-preloaded-hsts/" target="_blank" rel="noopener">Why using default .dev is an issue</a></p>
+<h3 id="SSL-Certificate-Issue"><a href="#SSL-Certificate-Issue" class="headerlink" title="SSL Certificate Issue"></a>SSL Certificate Issue</h3><p>If you encounter SSL issue in browers, add the trusted cert in your MacOS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">security add-trusted-cert -k login.keychain-db ~/Library/Application\ Support/io.puma.dev/cert.pem</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -289,11 +445,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2016/01/31/installing-postgress-on-mac/" itemprop="url">Installing PostgresDB on Mac</a></h1>
+                <a class="post-title-link" href="/blog/2016/01/31/installing-postgress-on-mac/" itemprop="url">
+                  Installing PostgresDB on Mac
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -301,10 +467,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-31T20:39:27+08:00">2016-01-31</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2016-01-31 20:39:27" itemprop="dateCreated datePublished" datetime="2016-01-31T20:39:27+08:00">2016-01-31</time>
             
 
             
@@ -352,6 +520,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -416,11 +587,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/" itemprop="url">Play Around with Chef Install on New EC2 Instance</a></h1>
+                <a class="post-title-link" href="/blog/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/" itemprop="url">
+                  Play Around with Chef Install on New EC2 Instance
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -428,10 +609,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-12-10T20:28:51+08:00">2015-12-10</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2015-12-10 20:28:51" itemprop="dateCreated datePublished" datetime="2015-12-10T20:28:51+08:00">2015-12-10</time>
             
 
             
@@ -489,6 +672,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -553,11 +739,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2015/09/28/building-robust-api-client-with-her-gem/" itemprop="url">Building Robust API Client with Her Gem</a></h1>
+                <a class="post-title-link" href="/blog/2015/09/28/building-robust-api-client-with-her-gem/" itemprop="url">
+                  Building Robust API Client with Her Gem
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -565,10 +761,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-28T20:26:28+08:00">2015-09-28</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2015-09-28 20:26:28" itemprop="dateCreated datePublished" datetime="2015-09-28T20:26:28+08:00">2015-09-28</time>
             
 
             
@@ -624,6 +822,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -688,11 +889,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2015/05/25/tips-for-image-migration-to-aws-s3/" itemprop="url">Tips for Image Migration to AWS S3</a></h1>
+                <a class="post-title-link" href="/blog/2015/05/25/tips-for-image-migration-to-aws-s3/" itemprop="url">
+                  Tips for Image Migration to AWS S3
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -700,10 +911,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-05-25T20:17:43+08:00">2015-05-25</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2015-05-25 20:17:43" itemprop="dateCreated datePublished" datetime="2015-05-25T20:17:43+08:00">2015-05-25</time>
             
 
             
@@ -748,6 +961,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -812,11 +1028,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/" itemprop="url">Tips for Improve SQL Query Performance in Rails Using Counter Cache</a></h1>
+                <a class="post-title-link" href="/blog/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/" itemprop="url">
+                  Tips for Improve SQL Query Performance in Rails Using Counter Cache
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -824,10 +1050,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-03T20:06:44+08:00">2014-04-03</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2014-04-03 20:06:44" itemprop="dateCreated datePublished" datetime="2014-04-03T20:06:44+08:00">2014-04-03</time>
             
 
             
@@ -879,6 +1107,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -943,11 +1174,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/" itemprop="url">Tips for Installing Oh My ZSH on Mac with Up to Date Version</a></h1>
+                <a class="post-title-link" href="/blog/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/" itemprop="url">
+                  Tips for Installing Oh My ZSH on Mac with Up to Date Version
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -955,10 +1196,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-02-06T20:02:56+08:00">2014-02-06</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2014-02-06 20:02:56" itemprop="dateCreated datePublished" datetime="2014-02-06T20:02:56+08:00">2014-02-06</time>
             
 
             
@@ -1006,6 +1249,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1070,11 +1316,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2013/12/27/common-mongodb-commands-for-restore-and-backup/" itemprop="url">Common MongoDB Commands for Restore and Backup</a></h1>
+                <a class="post-title-link" href="/blog/2013/12/27/common-mongodb-commands-for-restore-and-backup/" itemprop="url">
+                  Common MongoDB Commands for Restore and Backup
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1082,10 +1338,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-27T19:53:55+08:00">2013-12-27</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2013-12-27 19:53:55" itemprop="dateCreated datePublished" datetime="2013-12-27T19:53:55+08:00">2013-12-27</time>
             
 
             
@@ -1129,6 +1387,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1193,11 +1454,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/" itemprop="url">Tips for Playing around with Rubber Gem for AWS Deployment</a></h1>
+                <a class="post-title-link" href="/blog/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/" itemprop="url">
+                  Tips for Playing around with Rubber Gem for AWS Deployment
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1205,10 +1476,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-11T19:47:44+08:00">2013-12-11</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2013-12-11 19:47:44" itemprop="dateCreated datePublished" datetime="2013-12-11T19:47:44+08:00">2013-12-11</time>
             
 
             
@@ -1256,6 +1529,9 @@
         
       
     </div>
+
+    
+
     
     
     
@@ -1320,11 +1596,21 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2013/12/03/protect-ruby-array-object-from-class-instance/" itemprop="url">Protect Ruby Array Object from Class Instance</a></h1>
+                <a class="post-title-link" href="/blog/2013/12/03/protect-ruby-array-object-from-class-instance/" itemprop="url">
+                  Protect Ruby Array Object from Class Instance
+                </a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1332,10 +1618,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-03T19:44:54+08:00">2013-12-03</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2013-12-03 19:44:54" itemprop="dateCreated datePublished" datetime="2013-12-03T19:44:54+08:00">2013-12-03</time>
             
 
             
@@ -1372,137 +1660,15 @@
         
           
             <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PlayingCard</span></span></span><br><span class="line">  SUITS = <span class="string">%w&#123; clubs diamonds hearts spades &#125;</span></span><br><span class="line">  RANKS = <span class="string">%w&#123; 2 3 4 5 6 7 8 9 10 J Q K A &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Deck</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards</span></span></span><br><span class="line">      @cards.to_enum</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(n=<span class="number">1</span>)</span></span></span><br><span class="line">      @cards = []</span><br><span class="line">      SUITS.cycle(n) <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">        RANKS.cycle(<span class="number">1</span>) <span class="keyword">do</span> <span class="params">|r|</span></span><br><span class="line">          @cards &lt;&lt; <span class="string">"<span class="subst">#&#123;r&#125;</span> of <span class="subst">#&#123;s&#125;</span>"</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">deck = PlayingCard::Deck.new</span><br><span class="line">deck.cards &lt;&lt; <span class="string">"JOKER!!"</span> <span class="comment">#=&gt; FAIL!!</span></span><br></pre></td></tr></table></figure>
-<p>Playing around with this, knowing without the line <code>@cards.to_enum</code>, I could actually input a new item in the array with ease, but sometimes we don’t want that. Therefore, given the enumerator like <code>to_enum</code> will allow for iterations through the array without absorbing changes.</p>
+<p>Playing around with this, knowing without the line <a href="mailto:`@cards.t" target="_blank" rel="noopener">`@cards.t</a>o_enum<code>, I could actually input a new item in the array with ease, but sometimes we don&#39;t want that. Therefore, given the enumerator like</code>to_enum` will allow for iterations through the array without absorbing changes.</p>
 
           
         
       
     </div>
-    
-    
-    
 
     
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/12/02/attaching-ruby-enumerators-to-objects/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bernie Chiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2013/12/02/attaching-ruby-enumerators-to-objects/" itemprop="url">Attaching Ruby Enumerators to Objects</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-12-02T19:41:18+08:00">2013-12-02</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>While reading “The Well-Grounded Rubyist”, I found this topic quite interesting.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = <span class="string">%w&#123; David Black Yukihiro Matsumoto &#125;</span></span><br><span class="line">e = names.enum_for(<span class="symbol">:select</span>)</span><br></pre></td></tr></table></figure>
-<p>I could call <code>enum_for</code> on the object from which I want the enumerator to draw its iterations.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.each &#123; <span class="params">|n|</span> n.<span class="keyword">include</span>?(<span class="string">'a'</span>) &#125; <span class="comment">#=&gt; ["David", "Black", "Matsumoto"]</span></span><br></pre></td></tr></table></figure>
-<p>By calling upon <code>.each</code> method, I was able to allow the iterator to serve as a kind of front end to array’s <code>select</code>.</p>
-
-          
-        
-      
-    </div>
     
     
     
@@ -1537,7 +1703,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1580,7 +1746,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1596,19 +1762,17 @@
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/berniechiu" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/berniechiu" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -1641,8 +1805,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
 
@@ -1654,20 +1818,17 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
 
 
 
 
         
+
 
 
 
@@ -1742,21 +1903,21 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.2.0"></script>
 
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.2.0"></script>
 
 
 
   
-  
-
   
 
   
 
+  
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.2.0"></script>
 
 
 
@@ -1802,6 +1963,8 @@
   
 
   
+  
+
   
 
   

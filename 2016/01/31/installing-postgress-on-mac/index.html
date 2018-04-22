@@ -2,6 +2,9 @@
 
 
 
+
+
+
   
 
 
@@ -9,7 +12,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +52,19 @@
 
 <link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+<link href="/blog/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.2.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.0.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.2.0">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.0.1" color="#222">
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.2.0" color="#222">
 
 
 
@@ -76,7 +79,7 @@
   var CONFIG = {
     root: '/blog/',
     scheme: 'Muse',
-    version: '6.0.1',
+    version: '6.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,11 +102,7 @@
 
 
 
-  
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-<meta name="description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
+  <meta name="description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Installing PostgresDB on Mac">
 <meta property="og:url" content="https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/index.html">
@@ -111,7 +110,7 @@
 <meta property="og:description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://berniechiu.github.io/blog/images/launch-rocket-sample-image.png">
-<meta property="og:updated_time" content="2018-01-21T12:52:09.000Z">
+<meta property="og:updated_time" content="2018-04-22T05:21:55.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Installing PostgresDB on Mac">
 <meta name="twitter:description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
@@ -131,6 +130,7 @@
     sidebar: "",
   };
 </script>
+
   <title>Installing PostgresDB on Mac | BC Blog</title>
   
 
@@ -191,12 +191,12 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">BC Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -216,38 +216,50 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-        </li>
-      
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -256,6 +268,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -292,11 +305,19 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Installing PostgresDB on Mac</h1>
+          <h1 class="post-title" itemprop="name headline">Installing PostgresDB on Mac
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -304,10 +325,12 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-31T20:39:27+08:00">2016-01-31</time>
-            
 
-            
+              
+                
+              
+
+              <time title="Created: 2016-01-31 20:39:27" itemprop="dateCreated datePublished" datetime="2016-01-31T20:39:27+08:00">2016-01-31</time>
             
 
             
@@ -351,6 +374,9 @@
 
       
     </div>
+
+    
+
     
     
     
@@ -381,6 +407,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/04/22/switching-to-puma-dev-on-new-macos/" rel="prev" title="Switching to puma-dev on New MacOS">
+                Switching to puma-dev on New MacOS <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +484,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -470,19 +500,17 @@
 
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/berniechiu" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/berniechiu" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
             </div>
           
 
@@ -531,8 +559,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
 
@@ -544,20 +572,17 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
 
 
 
 
         
+
 
 
 
@@ -632,25 +657,25 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.2.0"></script>
 
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.0.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.0.1"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.0.1"></script>
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.2.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.2.0"></script>
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.0.1"></script>
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.2.0"></script>
 
 
 
@@ -696,6 +721,8 @@
   
 
   
+  
+
   
 
   
