@@ -10,13 +10,13 @@ Since I'm getting a new Mac recently, I have realized that [pow](http://pow.cx/m
 ### Install Puma-Dev
 
 ```bash
-$ brew install puma-dev
+$ brew install puma/puma/puma-dev
 ```
 
 ### Setup
 
 ```bash
-$ puma-dev -setup
+$ sudo puma-dev -setup
 ```
 
 ### Link Puma-Dev Application
