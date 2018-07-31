@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '6.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+<meta name="google-site-verification" content="1TqJ_FBsz_1d6EZBqjIIbtfr1Y6djgvhFtomOjL78NI" />
+
+
+  <meta name="description" content="Books Flanagan, David and Yukihiro Matsumoto, “The Ruby Programming Language” (2008) - http://shop.oreilly.com/product/9780596516178.do Metz, Sandi, “Practical Object-Oriented Design in Ruby: An Agile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Resources">
+<meta property="og:url" content="https://berniechiu.github.io/2013/08/28/ruby-resources/index.html">
+<meta property="og:site_name" content="BC Blog">
+<meta property="og:description" content="Books Flanagan, David and Yukihiro Matsumoto, “The Ruby Programming Language” (2008) - http://shop.oreilly.com/product/9780596516178.do Metz, Sandi, “Practical Object-Oriented Design in Ruby: An Agile">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-22T05:21:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby Resources">
+<meta name="twitter:description" content="Books Flanagan, David and Yukihiro Matsumoto, “The Ruby Programming Language” (2008) - http://shop.oreilly.com/product/9780596516178.do Metz, Sandi, “Practical Object-Oriented Design in Ruby: An Agile">
+
+
+
+
+
+
+  <link rel="canonical" href="https://berniechiu.github.io/2013/08/28/ruby-resources/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Ruby Resources | BC Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46118701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46118701-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BC Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Chase Excellence, Success will Follow</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/blog/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />Sitemap</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/08/28/ruby-resources/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ruby Resources
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2013-08-28 13:34:43" itemprop="dateCreated datePublished" datetime="2013-08-28T13:34:43+08:00">2013-08-28</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h3><ul>
+<li>Flanagan, David and Yukihiro Matsumoto, “The Ruby Programming Language” (2008) - <a href="http://shop.oreilly.com/product/9780596516178.do" target="_blank" rel="noopener">http://shop.oreilly.com/product/9780596516178.do</a></li>
+<li>Metz, Sandi, “Practical Object-Oriented Design in Ruby: An Agile Primer” (2012) - <a href="http://www.poodr.info/" target="_blank" rel="noopener">http://www.poodr.info/</a></li>
+<li>Olsen, Ross, “Design Patterns in Ruby” (2007) - <a href="http://eloquentruby.com/" target="_blank" rel="noopener">http://eloquentruby.com/</a></li>
+<li>Olsen, Ross, “Eloquent Ruby (Addison-Wesley Professional Ruby Series)” (2011) - <a href="http://eloquentruby.com/" target="_blank" rel="noopener">http://eloquentruby.com/</a></li>
+<li>Thomas, Dave, Chad Fowler and Andy Hunt, “Programming Ruby 1.9 &amp; 2.0 (4th ed.): The Pragmatic Programmer’s Guide” (2013) - <a href="http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0" target="_blank" rel="noopener">http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0</a></li>
+</ul>
+<h3 id="Communities"><a href="#Communities" class="headerlink" title="Communities"></a>Communities</h3><ul>
+<li>Ruby Forum - <a href="http://www.ruby-forum.com/" target="_blank" rel="noopener">http://www.ruby-forum.com/</a></li>
+<li>stackoverflow’s Newest ‘ruby’ Questions - <a href="http://stackoverflow.com/questions/tagged/ruby" target="_blank" rel="noopener">http://stackoverflow.com/questions/tagged/ruby</a></li>
+</ul>
+<h3 id="Conferences"><a href="#Conferences" class="headerlink" title="Conferences"></a>Conferences</h3><ul>
+<li>Confreaks - <a href="http://confreaks.com/events" target="_blank" rel="noopener">http://confreaks.com/events</a></li>
+</ul>
+<h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><ul>
+<li>Heroku: Cloud Application Platform - <a href="https://www.heroku.com/" target="_blank" rel="noopener">https://www.heroku.com/</a></li>
+<li>AppFog: PaaS for public and private clouds - <a href="https://www.appfog.com/" target="_blank" rel="noopener">https://www.appfog.com/</a></li>
+</ul>
+<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><ul>
+<li>Ruby Programming Language - <a href="http://www.ruby-lang.org/en/" target="_blank" rel="noopener">http://www.ruby-lang.org/en/</a></li>
+<li>Ruby-Doc.org: Documenting the Ruby Language - <a href="http://ruby-doc.org/" target="_blank" rel="noopener">http://ruby-doc.org/</a></li>
+</ul>
+<h3 id="Gems"><a href="#Gems" class="headerlink" title="Gems"></a>Gems</h3><ul>
+<li>Pry: an IRB alternative and runtime developer console - <a href="http://pryrepl.org/" target="_blank" rel="noopener">http://pryrepl.org/</a></li>
+<li>RubyGems.org - <a href="http://rubygems.org/" target="_blank" rel="noopener">http://rubygems.org/</a></li>
+<li>The Ruby Toolbox: indexed site for gems - <a href="https://www.ruby-toolbox.com/" target="_blank" rel="noopener">https://www.ruby-toolbox.com/</a></li>
+</ul>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><ul>
+<li>Pik: Ruby version manager (Win) - <a href="https://github.com/vertiginous/pik" target="_blank" rel="noopener">https://github.com/vertiginous/pik</a></li>
+<li>RubyInstaller (Win, OS X) - <a href="http://rubyinstaller.org/" target="_blank" rel="noopener">http://rubyinstaller.org/</a></li>
+<li>rbenv: Simple Ruby version management (OS X, Linux) - <a href="http://github.com/sstephenson/rbenv" target="_blank" rel="noopener">http://github.com/sstephenson/rbenv</a></li>
+<li>RVM: Ruby Version Management (OS X, Linux) - <a href="https://rvm.io/" target="_blank" rel="noopener">https://rvm.io/</a></li>
+</ul>
+<h3 id="Integrated-Development-Environments-IDEs"><a href="#Integrated-Development-Environments-IDEs" class="headerlink" title="Integrated Development Environments (IDEs)"></a>Integrated Development Environments (IDEs)</h3><ul>
+<li>3rdRail - <a href="http://www.embarcadero.com/products/3rdrail" target="_blank" rel="noopener">http://www.embarcadero.com/products/3rdrail</a></li>
+<li>Komodo IDE - <a href="http://www.activestate.com/komodo-ide" target="_blank" rel="noopener">http://www.activestate.com/komodo-ide</a></li>
+<li>RDE (Win) - <a href="http://homepage2.nifty.com/sakazuki/rde_en/index.html" target="_blank" rel="noopener">http://homepage2.nifty.com/sakazuki/rde_en/index.html</a></li>
+<li>RubyMine - <a href="http://www.jetbrains.com/ruby/" target="_blank" rel="noopener">http://www.jetbrains.com/ruby/</a></li>
+<li>RadRails - <a href="http://www.aptana.com/products/radrails" target="_blank" rel="noopener">http://www.aptana.com/products/radrails</a></li>
+</ul>
+<h3 id="Interactive-tutorials"><a href="#Interactive-tutorials" class="headerlink" title="Interactive tutorials"></a>Interactive tutorials</h3><ul>
+<li>A Ruby Learning Hub - <a href="http://rubylearning.org/classes/" target="_blank" rel="noopener">http://rubylearning.org/classes/</a></li>
+<li>Codecademy (this site!) - <a href="http://www.codecademy.com/tracks/ruby" target="_blank" rel="noopener">http://www.codecademy.com/tracks/ruby</a></li>
+<li>Code School - <a href="http://www.codeschool.com/paths/ruby" target="_blank" rel="noopener">http://www.codeschool.com/paths/ruby</a></li>
+<li>LearnStreet - <a href="http://www.learnstreet.com/language/ruby" target="_blank" rel="noopener">http://www.learnstreet.com/language/ruby</a></li>
+<li>Ruby Koans Online - <a href="http://koans.heroku.com/" target="_blank" rel="noopener">http://koans.heroku.com/</a></li>
+<li>RubyMonk - Interactive Ruby tutorials - <a href="http://rubymonk.com/" target="_blank" rel="noopener">http://rubymonk.com/</a></li>
+<li>TryRuby - <a href="http://tryruby.org" target="_blank" rel="noopener">http://tryruby.org</a></li>
+</ul>
+<h3 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h3><ul>
+<li>Cinch: IRC bot building framework - <a href="https://github.com/cinchrb/cinch" target="_blank" rel="noopener">https://github.com/cinchrb/cinch</a></li>
+<li>Shoes: a GUI Toolkit originally developed by the legendary _why - <a href="http://shoesrb.com/" target="_blank" rel="noopener">http://shoesrb.com/</a></li>
+<li>QtRuby: a binding of the application framework Qt for Ruby - <a href="http://rubyforge.org/projects/korundum/" target="_blank" rel="noopener">http://rubyforge.org/projects/korundum/</a></li>
+</ul>
+<h3 id="Newsletters"><a href="#Newsletters" class="headerlink" title="Newsletters"></a>Newsletters</h3><ul>
+<li>Ruby Weekly - <a href="http://rubyweekly.com/" target="_blank" rel="noopener">http://rubyweekly.com/</a></li>
+<li>Green Ruby News - <a href="http://greenruby.org/" target="_blank" rel="noopener">http://greenruby.org/</a></li>
+</ul>
+<h3 id="Online-publications"><a href="#Online-publications" class="headerlink" title="Online publications"></a>Online publications</h3><ul>
+<li>Preiss, Bruno R., “Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby” (2004) - <a href="http://www.brpreiss.com/books/opus8/" target="_blank" rel="noopener">http://www.brpreiss.com/books/opus8/</a></li>
+<li>Sobers, Rob, “Learn Ruby the Hard Way” - <a href="http://ruby.learncodethehardway.org/book/" target="_blank" rel="noopener">http://ruby.learncodethehardway.org/book/</a></li>
+<li>Thomas, David and Andrew Hunt, “Programming Ruby: The Pragmatic Programmer’s Guide (1st ed.)” (2001) - <a href="http://www.rubycentral.com/pickaxe/" target="_blank" rel="noopener">http://www.rubycentral.com/pickaxe/</a> (Ruby 1.8)</li>
+<li>why the lucky stiff, “Why’s (Poignant) Guide to Ruby” - <a href="http://mislav.uniqpath.com/poignant-guide/" target="_blank" rel="noopener">http://mislav.uniqpath.com/poignant-guide/</a></li>
+</ul>
+<h3 id="Online-tutorials"><a href="#Online-tutorials" class="headerlink" title="Online tutorials"></a>Online tutorials</h3><ul>
+<li>Learnable (not free): a library of online books and online courses - <a href="https://learnable.com/topics/ruby" target="_blank" rel="noopener">https://learnable.com/topics/ruby</a></li>
+<li>Nettuts+’s Ruby for Newbies - <a href="http://net.tutsplus.com/sessions/ruby-for-newbies/" target="_blank" rel="noopener">http://net.tutsplus.com/sessions/ruby-for-newbies/</a></li>
+<li>O’Reilly Ruby - <a href="http://oreillynet.com/ruby/" target="_blank" rel="noopener">http://oreillynet.com/ruby/</a></li>
+<li>Ruby Kickstart - <a href="http://ruby-kickstart.com" target="_blank" rel="noopener">http://ruby-kickstart.com</a></li>
+<li>Ruby Study Hall - <a href="http://www.rubystudyhall.com/" target="_blank" rel="noopener">http://www.rubystudyhall.com/</a></li>
+<li>rubylearning.com’s Ruby Tutorial - <a href="http://rubylearning.com/" target="_blank" rel="noopener">http://rubylearning.com/</a></li>
+<li>ShowMeDo’s Ruby Videos, Tutorials and Screencasts - <a href="http://showmedo.com/videotutorials/ruby" target="_blank" rel="noopener">http://showmedo.com/videotutorials/ruby</a></li>
+<li>TheNewBoston’s Ruby Videos - <a href="http://thenewboston.org/list.php?cat=50" target="_blank" rel="noopener">http://thenewboston.org/list.php?cat=50</a></li>
+</ul>
+<h3 id="Other-platforms"><a href="#Other-platforms" class="headerlink" title="Other platforms"></a>Other platforms</h3><ul>
+<li>JRuby: Ruby on the Java Virtual Machine (JVM) - <a href="http://jruby.org/" target="_blank" rel="noopener">http://jruby.org/</a></li>
+<li>MacRuby - <a href="http://macruby.org/" target="_blank" rel="noopener">http://macruby.org/</a></li>
+<li>RubyMotion - Ruby for iOS - <a href="http://www.rubymotion.com/" target="_blank" rel="noopener">http://www.rubymotion.com/</a></li>
+</ul>
+<h3 id="Podcasts"><a href="#Podcasts" class="headerlink" title="Podcasts"></a>Podcasts</h3><ul>
+<li>Ruby5: The Latest News in the Ruby and Rails Community - <a href="http://ruby5.envylabs.com/" target="_blank" rel="noopener">http://ruby5.envylabs.com/</a></li>
+<li>Ruby Rogues - <a href="http://rubyrogues.com/" target="_blank" rel="noopener">http://rubyrogues.com/</a></li>
+<li>thoughtbot’s Giant Robots Smashing into Other Giant Robots - <a href="http://learn.thoughtbot.com/podcast" target="_blank" rel="noopener">http://learn.thoughtbot.com/podcast</a></li>
+</ul>
+<h3 id="Problems-amp-Puzzles"><a href="#Problems-amp-Puzzles" class="headerlink" title="Problems &amp; Puzzles"></a>Problems &amp; Puzzles</h3><ul>
+<li>codewars: a challenge-based learning tool that has a wide variety of difficulty levels - <a href="http://www.codewars.com" target="_blank" rel="noopener">http://www.codewars.com</a></li>
+<li>Project Euler: a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve - <a href="http://projecteuler.net/" target="_blank" rel="noopener">http://projecteuler.net/</a></li>
+<li>PuzzleNode: a site for coders who enjoy to work on challenging problems - <a href="http://www.puzzlenode.com/" target="_blank" rel="noopener">http://www.puzzlenode.com/</a></li>
+</ul>
+<h3 id="Quizzes"><a href="#Quizzes" class="headerlink" title="Quizzes"></a>Quizzes</h3><ul>
+<li>Rexaminator: Ruby Online Exam Simulator - <a href="http://rexaminator.com/" target="_blank" rel="noopener">http://rexaminator.com/</a></li>
+<li>Ruby Quiz - <a href="http://rubyquiz.com/" target="_blank" rel="noopener">http://rubyquiz.com/</a></li>
+</ul>
+<h3 id="Terminals"><a href="#Terminals" class="headerlink" title="Terminals"></a>Terminals</h3><ul>
+<li>iTerm 2 (OS X) - <a href="http://www.iterm2.com/" target="_blank" rel="noopener">http://www.iterm2.com/</a></li>
+</ul>
+<h3 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h3><ul>
+<li>Rubular: a Ruby regular expression editor and tester - <a href="http://rubular.com/" target="_blank" rel="noopener">http://rubular.com/</a></li>
+</ul>
+<h3 id="Text-editors"><a href="#Text-editors" class="headerlink" title="Text editors"></a>Text editors</h3><ul>
+<li>GNU Emacs - <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="noopener">http://www.gnu.org/software/emacs/</a></li>
+<li>Notepad++ (Win) - <a href="http://notepad-plus-plus.org/" target="_blank" rel="noopener">http://notepad-plus-plus.org/</a></li>
+<li>Sublime Text 2 - <a href="http://www.sublimetext.com/2" target="_blank" rel="noopener">http://www.sublimetext.com/2</a></li>
+<li>TextMate 2 (OS X) - <a href="http://github.com/textmate/textmate" target="_blank" rel="noopener">http://github.com/textmate/textmate</a></li>
+<li>Vim - <a href="http://www.vim.org/" target="_blank" rel="noopener">http://www.vim.org/</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2013/07/17/rails-learning-path/" rel="next" title="Rails Learning Path">
+                <i class="fa fa-chevron-left"></i> Rails Learning Path
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2013/09/11/allow-two-rails-servers-running-on-the-same-session/" rel="prev" title="Allow Two Rails Servers Running on the Same Session">
+                Allow Two Rails Servers Running on the Same Session <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bernie Chiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/berniechiu" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Books"><span class="nav-number">1.</span> <span class="nav-text">Books</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Communities"><span class="nav-number">2.</span> <span class="nav-text">Communities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conferences"><span class="nav-number">3.</span> <span class="nav-text">Conferences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deployment"><span class="nav-number">4.</span> <span class="nav-text">Deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Documentation"><span class="nav-number">5.</span> <span class="nav-text">Documentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gems"><span class="nav-number">6.</span> <span class="nav-text">Gems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installation"><span class="nav-number">7.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integrated-Development-Environments-IDEs"><span class="nav-number">8.</span> <span class="nav-text">Integrated Development Environments (IDEs)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interactive-tutorials"><span class="nav-number">9.</span> <span class="nav-text">Interactive tutorials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Libraries"><span class="nav-number">10.</span> <span class="nav-text">Libraries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Newsletters"><span class="nav-number">11.</span> <span class="nav-text">Newsletters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Online-publications"><span class="nav-number">12.</span> <span class="nav-text">Online publications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Online-tutorials"><span class="nav-number">13.</span> <span class="nav-text">Online tutorials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-platforms"><span class="nav-number">14.</span> <span class="nav-text">Other platforms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Podcasts"><span class="nav-number">15.</span> <span class="nav-text">Podcasts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems-amp-Puzzles"><span class="nav-number">16.</span> <span class="nav-text">Problems &amp; Puzzles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quizzes"><span class="nav-number">17.</span> <span class="nav-text">Quizzes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Terminals"><span class="nav-number">18.</span> <span class="nav-text">Terminals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing"><span class="nav-number">19.</span> <span class="nav-text">Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-editors"><span class="nav-number">20.</span> <span class="nav-text">Text editors</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
