@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/07/17/rails-learning-path/</loc>
+    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
+    <loc>https://berniechiu.github.io/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -73,6 +73,13 @@
   
   <url>
     <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/07/17/rails-learning-path/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -93,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/</loc>
+    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -101,13 +108,6 @@
   
   <url>
     <loc>https://berniechiu.github.io/2013/09/11/allow-two-rails-servers-running-on-the-same-session/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
