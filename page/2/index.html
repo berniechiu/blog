@@ -287,6 +287,143 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/12/03/protect-ruby-array-object-from-class-instance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2013/12/03/protect-ruby-array-object-from-class-instance/" itemprop="url">
+                  Protect Ruby Array Object from Class Instance
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2013-12-03 19:44:54" itemprop="dateCreated datePublished" datetime="2013-12-03T19:44:54+08:00">2013-12-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PlayingCard</span></span></span><br><span class="line">  SUITS = <span class="string">%w&#123; clubs diamonds hearts spades &#125;</span></span><br><span class="line">  RANKS = <span class="string">%w&#123; 2 3 4 5 6 7 8 9 10 J Q K A &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Deck</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards</span></span></span><br><span class="line">      @cards.to_enum</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(n=<span class="number">1</span>)</span></span></span><br><span class="line">      @cards = []</span><br><span class="line">      SUITS.cycle(n) <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">        RANKS.cycle(<span class="number">1</span>) <span class="keyword">do</span> <span class="params">|r|</span></span><br><span class="line">          @cards &lt;&lt; <span class="string">"<span class="subst">#&#123;r&#125;</span> of <span class="subst">#&#123;s&#125;</span>"</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">deck = PlayingCard::Deck.new</span><br><span class="line">deck.cards &lt;&lt; <span class="string">"JOKER!!"</span> <span class="comment">#=&gt; FAIL!!</span></span><br></pre></td></tr></table></figure>
+<p>Playing around with this, knowing without the line <a href="mailto:`@cards.t" target="_blank" rel="noopener">`@cards.t</a>o_enum<code>, I could actually input a new item in the array with ease, but sometimes we don&#39;t want that. Therefore, given the enumerator like</code>to_enum` will allow for iterations through the array without absorbing changes.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/12/02/attaching-ruby-enumerators-to-objects/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1651,144 +1788,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/07/17/rails-learning-path/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bernie Chiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2013/07/17/rails-learning-path/" itemprop="url">
-                  Rails Learning Path
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2013-07-17 13:30:36" itemprop="dateCreated datePublished" datetime="2013-07-17T13:30:36+08:00">2013-07-17</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Since I first started learning Rails on March, 2013, I kind of got it now how all those neat little stuff work. MVC architecture is something hard to pick up at first because I have to run into different files to modify my pages and settings. I wonder why I couldn’t just write codes in straight ways like in PHP (maybe I’m just not good enough in PHP to learn MVC at first), but few weeks later, I came to realize by keeping those codes in MVC structure could actually make the overall application organized in a very decent way.</p>
-<p><a href="http://ruby.railstutorial.org/" target="_blank" rel="noopener">Rails Tutorial</a> is the top free resource for learning rails recommended by many StackOverflow users. Of course, I took the recommendation respectfully, so I undoubtfully picked up the book from Amazon. This is a great book, but it kind of forces you to learn everything at once that one has to develop in Rails. I would suggest people reading this book twice because there are still many tips to pick up even though I could still make a web app without implementing those in my codes. However, those tips might include extra security features and nice coding techniques that most developers wouldn’t want to miss out. While those may be quite confusing at first, tips are actually like subjects for intermediate Rails developer. As I progress through the chapters, I become more confident to understand those advanced topics. Therefore, reading it twice really makes me more comfortable at building Rails apps.</p>
-<p>There are still lots to learn in Rails. Testing, MVC, Git and Ruby are still new to me. I believe no one could just learn everything in a month or two (Even I know how they works, I can’t remember them all. After all, I need to remember those main features and type codes at ease like a pro), so I just have to keep on practicing. Look for more resources like Rails Casts and Ruby Programming Language from various authors.</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1836,7 +1835,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1844,6 +1843,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
               
             </nav>
           
