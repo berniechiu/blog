@@ -287,6 +287,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2018/09/10/refactor-legacy-controller-in-solid-pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/09/10/refactor-legacy-controller-in-solid-pattern/" itemprop="url">
+                  Refactor Legacy Controller in a Good SOLID Pattern
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-10 08:51:18" itemprop="dateCreated datePublished" datetime="2018-09-10T08:51:18+08:00">2018-09-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h3><p>Refactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the readability but also provide a good sample for incoming juniors’ career development in the company.</p>
+<p>Let’s looks that this piece of code:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">module</span> <span class="title">Api</span></span></span><br><span class="line">   <span class="class"><span class="keyword">module</span> <span class="title">Admin</span></span></span><br><span class="line">     <span class="class"><span class="keyword">module</span> <span class="title">Analytics</span></span></span><br><span class="line">       <span class="class"><span class="keyword">class</span> <span class="title">ProductsController</span> &lt; V1::ApiController</span></span><br><span class="line">         <span class="function"><span class="keyword">def</span> <span class="title">top_sold</span></span></span><br><span class="line">           raise ParamsMissing, <span class="string">'params missing'</span> <span class="keyword">if</span> params_missing</span><br><span class="line">           raise InvalidDateInterval, <span class="string">'range of days is not allowed'</span> <span class="keyword">unless</span> check_date_interval</span><br><span class="line">           response = perform(</span><br><span class="line">             <span class="symbol">merchant_id:</span> current_merchant.id,</span><br><span class="line">             <span class="symbol">url:</span> analytics_params[<span class="symbol">:url</span>]</span><br><span class="line">             <span class="symbol">start_date:</span> analytics_params[<span class="symbol">:start_date</span>],</span><br><span class="line">             <span class="symbol">end_date:</span> analytics_params[<span class="symbol">:end_date</span>]</span><br><span class="line">           )</span><br><span class="line"> </span><br><span class="line">           render <span class="symbol">json:</span> <span class="symbol">:</span><span class="symbol">:Analytics</span><span class="symbol">:</span><span class="symbol">:FormatService</span>.top_product_format(response[<span class="string">'metrics'</span>]), <span class="symbol">status:</span> <span class="symbol">:ok</span></span><br><span class="line">         <span class="keyword">rescue</span> RestClient::Exception =&gt; ex</span><br><span class="line">           render <span class="symbol">json:</span> JSON.parse(ex.response), <span class="symbol">status:</span> <span class="symbol">:unprocessable_entity</span></span><br><span class="line">         <span class="keyword">rescue</span> =&gt; ex</span><br><span class="line">           render <span class="symbol">json:</span> &#123; <span class="symbol">message:</span> ex.message &#125;, <span class="symbol">status:</span> <span class="symbol">:unprocessable_entity</span></span><br><span class="line">         <span class="keyword">end</span></span><br><span class="line">         </span><br><span class="line">         ...</span><br><span class="line">         ...</span><br><span class="line">         ...</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Even the functions are separated, but let’s refresh the responsibility of the Rails <code>controller</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It coordinates the interaction between the user, the views, and the model. The controller is also a home to a number of important ancillary services. It is responsible for routing external requests to internal actions.</span><br></pre></td></tr></table></figure>
+<p>Simple and elegant. However, what we did here kind of violates the first SOLID principles which is <code>Single Responsibility</code>.</p>
+<p>Look at the line <code>6</code> to <code>7</code>, basically it’s doing the job besides the controller routing but to validate errors. If we want to customize and even extend more validations, might end up all the private methods in controller and action in front of action definition.</p>
+<p>Also, line <code>8</code> to <code>11</code> also comes across a request of a third party handler, even a <code>RestClient</code> or <code>HTTParty</code> request being put here looks out of place. If we want to extend more methods like <code>post</code> or <code>form</code> requests, definitely will bloat up the private functions being defined in the controller here.</p>
+<p>Of course, line <code>13</code> to <code>18</code> looks out of place too. We have a decorator/serializer here but strongly depend on the single attribute of the response. And other responses seem not to fit in this decorator. What if we want to change the format when the endpoint change, this looks like a violation of <code>Open/Close Principle</code> for me.</p>
+<p>Let’s refresh the definition of the <code>Open/Close Principle</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification</span><br></pre></td></tr></table></figure>
+<h3 id="What-I-Did-Here"><a href="#What-I-Did-Here" class="headerlink" title="What I Did Here"></a>What I Did Here</h3><p>Let’s extract the request handler to its own module</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Anaylytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Request</span></span></span><br><span class="line">    <span class="keyword">include</span> Singleton</span><br><span class="line"> </span><br><span class="line">    BASE_URL = <span class="string">"<span class="subst">#&#123;SERVICES[<span class="string">'anaylytics'</span>][<span class="string">'api_host'</span>]&#125;</span>"</span>.freeze</span><br><span class="line">    URLS = &#123;</span><br><span class="line">      <span class="symbol">top_sale:</span> <span class="string">'top_sale'</span></span><br><span class="line">    &#125;.freeze</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="class"><span class="keyword">class</span> &lt;&lt; self</span></span><br><span class="line">      extend Forwardable</span><br><span class="line"> </span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">method_added</span><span class="params">(method)</span></span></span><br><span class="line">        (<span class="class"><span class="keyword">class</span> &lt;&lt; self;</span> <span class="keyword">self</span>; <span class="keyword">end</span>).def_delegator <span class="symbol">:instance</span>, method</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(key, <span class="symbol">params:</span> &#123;&#125;)</span></span></span><br><span class="line">      RestClient::Request.execute(</span><br><span class="line">        <span class="symbol">method:</span> <span class="symbol">:get</span>,</span><br><span class="line">        <span class="symbol">url:</span> <span class="string">"<span class="subst">#&#123;BASE_URL&#125;</span>/<span class="subst">#&#123;URLS[key]&#125;</span>"</span>,</span><br><span class="line">        <span class="symbol">headers:</span> &#123; <span class="symbol">params:</span> params &#125;</span><br><span class="line">      )</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2018/08/17/airflow-on-kubernetes-part-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1566,148 +1714,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bernie Chiu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/" itemprop="url">
-                  Tips for Playing around with Rubber Gem for AWS Deployment
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2013-12-11 19:47:44" itemprop="dateCreated datePublished" datetime="2013-12-11T19:47:44+08:00">2013-12-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a mess.</p>
-<p>First of all, default Instance is <strong>m1.medium</strong> for VM Image type, which is not free, so we have to set the YAML file to <strong>t1.micro</strong> according to Amazon Free Tier description.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image_type:</span> <span class="string">t1.micro</span></span><br><span class="line"><span class="attr">image_id:</span> <span class="string">'ami-5e215b0c'</span></span><br></pre></td></tr></table></figure>
-<p>Besides, newly created account has only 5 limited <strong>Security Groups</strong> for us to set up, so we have to make sure the Rubber does not generate more than that number.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_security_groups:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>Somehow the multiple intances have trouble connecting to each other, we might want to config the <code>pg_hba.conf</code> file to allow IP connection.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1755,7 +1761,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1772,7 +1778,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

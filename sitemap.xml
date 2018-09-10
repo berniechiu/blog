@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://berniechiu.github.io/2018/09/10/refactor-legacy-controller-in-solid-pattern/</loc>
+    
+    <lastmod>2018-09-10T01:30:53.726Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2018/08/17/airflow-on-kubernetes-part-1/</loc>
     
-    <lastmod>2018-08-17T01:22:34.396Z</lastmod>
+    <lastmod>2018-09-10T01:30:43.881Z</lastmod>
     
   </url>
   
@@ -23,35 +30,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://berniechiu.github.io/2013/12/27/common-mongodb-commands-for-restore-and-backup/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/10/06/how-to-build-and-install-local-ruby-gem/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/11/12/how-to-start-with-resque/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -65,7 +44,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
+    <loc>https://berniechiu.github.io/2013/11/12/how-to-start-with-resque/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/10/06/how-to-build-and-install-local-ruby-gem/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -79,7 +65,28 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2013/09/11/allow-two-rails-servers-running-on-the-same-session/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -100,21 +107,14 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2013/09/17/setup-nginx-for-multiple-apps/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -135,6 +135,13 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
@@ -149,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
+    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
