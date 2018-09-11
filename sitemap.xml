@@ -4,7 +4,7 @@
   <url>
     <loc>https://berniechiu.github.io/2018/09/10/refactor-legacy-controller-in-solid-pattern/</loc>
     
-    <lastmod>2018-09-11T00:48:55.603Z</lastmod>
+    <lastmod>2018-09-11T00:54:05.447Z</lastmod>
     
   </url>
   
@@ -23,14 +23,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
+    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -44,14 +37,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/11/12/how-to-start-with-resque/</loc>
+    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -65,7 +51,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/</loc>
+    <loc>https://berniechiu.github.io/2013/11/12/how-to-start-with-resque/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -79,21 +72,14 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2013/09/11/allow-two-rails-servers-running-on-the-same-session/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/08/28/ruby-resources/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -107,7 +93,28 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/08/28/ruby-resources/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2013/09/17/setup-nginx-for-multiple-apps/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
+    <loc>https://berniechiu.github.io/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/</loc>
+    <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -149,14 +156,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
+    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
