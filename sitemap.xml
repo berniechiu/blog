@@ -4,7 +4,7 @@
   <url>
     <loc>https://berniechiu.github.io/2018/09/10/refactor-legacy-controller-in-solid-pattern/</loc>
     
-    <lastmod>2018-09-10T01:30:53.726Z</lastmod>
+    <lastmod>2018-09-11T00:48:55.603Z</lastmod>
     
   </url>
   
@@ -23,7 +23,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
+    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/10/04/industrial-information-application-conf-2013-notes/</loc>
+    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -65,14 +72,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    <loc>https://berniechiu.github.io/2013/10/04/industrial-information-application-conf-2013-notes/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -80,20 +80,6 @@
   
   <url>
     <loc>https://berniechiu.github.io/2013/09/11/allow-two-rails-servers-running-on-the-same-session/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/07/17/rails-learning-path/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -114,7 +100,21 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/2013/07/17/rails-learning-path/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/2013/09/17/setup-nginx-for-multiple-apps/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -128,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
@@ -142,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
+    <loc>https://berniechiu.github.io/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -156,7 +149,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
+    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
