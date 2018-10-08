@@ -4,7 +4,7 @@
   <url>
     <loc>https://berniechiu.github.io/2018/10/08/create-a-well-rounded-ci-and-cd-flow/</loc>
     
-    <lastmod>2018-10-08T15:12:24.386Z</lastmod>
+    <lastmod>2018-10-08T15:37:21.142Z</lastmod>
     
   </url>
   
@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/10/06/how-to-build-and-install-local-ruby-gem/</loc>
+    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/</loc>
+    <loc>https://berniechiu.github.io/2013/10/06/how-to-build-and-install-local-ruby-gem/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -100,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
+    <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -114,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://berniechiu.github.io/2013/09/17/setup-nginx-for-multiple-apps/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
@@ -128,14 +121,21 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/05/25/tips-for-image-migration-to-aws-s3/</loc>
+    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
+    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
+    
+    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/2015/05/25/tips-for-image-migration-to-aws-s3/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
@@ -156,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    <loc>https://berniechiu.github.io/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/</loc>
     
     <lastmod>2018-04-22T05:21:55.000Z</lastmod>
     
