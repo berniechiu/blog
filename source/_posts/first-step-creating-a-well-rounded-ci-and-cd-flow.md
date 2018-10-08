@@ -1,5 +1,5 @@
 ---
-title: Create a Well-Rounded CI/CD Flow
+title: First Step of Creating a Well-Rounded CI/CD Flow
 date: 2018-10-08 22:37:26
 tags: devops
 keywords: devops,rails,continuous delivery, continuous deployment
