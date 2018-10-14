@@ -388,7 +388,7 @@ theme_config:
   # Available value:
   #    normal | night | night eighties | night blue | night bright
   # https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: night eighties
+  highlight_theme: night
 
   # Enable "cheers" for archive page.
   cheers_enabled: true
@@ -499,10 +499,10 @@ theme_config:
 
   # Disqus
   disqus:
-    enable: true
+    enable: false
     shortname:
     count: true
-    lazyload: true
+    lazyload: false
 
   # Hypercomments
   #hypercomments_id:
