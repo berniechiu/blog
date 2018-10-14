@@ -2,170 +2,170 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://berniechiu.github.io/2018/10/08/first-step-creating-a-well-rounded-ci-and-cd-flow/</loc>
+    <loc>https://berniechiu.github.io/posts/c8a89c3a/</loc>
     
-    <lastmod>2018-10-08T15:41:00.482Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2018/09/10/refactor-legacy-controller-in-solid-pattern/</loc>
-    
-    <lastmod>2018-09-11T00:54:05.447Z</lastmod>
+    <lastmod>2018-10-14T03:53:03.388Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2018/08/17/airflow-on-kubernetes-part-1/</loc>
+    <loc>https://berniechiu.github.io/posts/467527d0/</loc>
     
-    <lastmod>2018-09-10T01:30:43.881Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2018/04/22/switching-to-puma-dev-on-new-macos/</loc>
-    
-    <lastmod>2018-04-29T02:27:30.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:52.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/27/common-mongodb-commands-for-restore-and-backup/</loc>
+    <loc>https://berniechiu.github.io/posts/228462e4/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/11/17/comparing-the-access-of-ruby-instance-variables/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:42.984Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/07/17/when-did-i-start-to-enjoy-programming/</loc>
+    <loc>https://berniechiu.github.io/posts/b541a315/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/10/06/how-to-build-and-install-local-ruby-gem/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:32.940Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/11/12/how-to-start-with-resque/</loc>
+    <loc>https://berniechiu.github.io/posts/398c98be/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/10/04/industrial-information-application-conf-2013-notes/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:23.871Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2016/01/31/installing-postgress-on-mac/</loc>
+    <loc>https://berniechiu.github.io/posts/add7b875/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2015/12/10/play-around-with-chef-install-on-new-ec2-instance/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:14.684Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/09/11/allow-two-rails-servers-running-on-the-same-session/</loc>
+    <loc>https://berniechiu.github.io/posts/5c7b6b12/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/07/17/rails-learning-path/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:52:05.861Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/02/attaching-ruby-enumerators-to-objects/</loc>
+    <loc>https://berniechiu.github.io/posts/557f8725/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/08/28/ruby-resources/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:54.243Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/09/17/setup-nginx-for-multiple-apps/</loc>
+    <loc>https://berniechiu.github.io/posts/35c059f2/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2013/09/11/simple-request-sending-through-rails/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:46.438Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2015/09/28/building-robust-api-client-with-her-gem/</loc>
+    <loc>https://berniechiu.github.io/posts/4f0bed1f/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2015/05/25/tips-for-image-migration-to-aws-s3/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:36.671Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2014/04/03/tips-for-improve-sql-query-performance-in-rails-using-counter-cache/</loc>
+    <loc>https://berniechiu.github.io/posts/84a4315c/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/2014/02/06/tips-for-installing-oh-my-zsh-on-mac-with-up-to-date-version/</loc>
-    
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:27.228Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/11/tips-for-playing-around-with-rubber-gem-for-aws-deployment/</loc>
+    <loc>https://berniechiu.github.io/posts/9a371ac/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:16.754Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/2013/12/03/protect-ruby-array-object-from-class-instance/</loc>
+    <loc>https://berniechiu.github.io/posts/d299683d/</loc>
     
-    <lastmod>2018-04-22T05:21:55.000Z</lastmod>
+    <lastmod>2018-10-14T03:51:08.836Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/465cb43f/</loc>
+    
+    <lastmod>2018-10-14T03:51:00.227Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/a21e1c9b/</loc>
+    
+    <lastmod>2018-10-14T03:50:51.027Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/83ba66de/</loc>
+    
+    <lastmod>2018-10-14T03:50:41.722Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/d5918f3c/</loc>
+    
+    <lastmod>2018-10-14T03:50:33.273Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/1db0a039/</loc>
+    
+    <lastmod>2018-10-14T03:50:24.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/61f73bee/</loc>
+    
+    <lastmod>2018-10-14T03:50:14.391Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/f8543605/</loc>
+    
+    <lastmod>2018-10-14T03:48:23.464Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/751b5e/</loc>
+    
+    <lastmod>2018-10-14T03:48:11.450Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/a34aea26/</loc>
+    
+    <lastmod>2018-10-14T03:48:01.921Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/ceb8c668/</loc>
+    
+    <lastmod>2018-10-14T03:47:52.499Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/posts/1db9426/</loc>
+    
+    <lastmod>2018-10-14T03:47:42.351Z</lastmod>
     
   </url>
   

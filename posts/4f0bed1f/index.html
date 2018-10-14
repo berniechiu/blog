@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '6.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+<meta name="google-site-verification" content="1TqJ_FBsz_1d6EZBqjIIbtfr1Y6djgvhFtomOjL78NI" />
+
+
+  <meta name="description" content="The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the reada">
+<meta name="keywords" content="ruby,rails,design pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Refactor Legacy Controller in a Good SOLID Pattern">
+<meta property="og:url" content="https://berniechiu.github.io/posts/4f0bed1f/index.html">
+<meta property="og:site_name" content="BC Blog">
+<meta property="og:description" content="The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the reada">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-10-14T03:51:36.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Refactor Legacy Controller in a Good SOLID Pattern">
+<meta name="twitter:description" content="The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the reada">
+
+
+
+
+
+
+  <link rel="canonical" href="https://berniechiu.github.io/posts/4f0bed1f/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Refactor Legacy Controller in a Good SOLID Pattern | BC Blog</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46118701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46118701-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BC Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Chase Excellence, Success will Follow</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/blog/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />Sitemap</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/4f0bed1f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Refactor Legacy Controller in a Good SOLID Pattern
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-10 08:51:18" itemprop="dateCreated datePublished" datetime="2018-09-10T08:51:18+08:00">2018-09-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h3><p>Refactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the readability but also provide a good sample for incoming juniors’ career development in the company.</p>
+<p>Let’s looks that this piece of code:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">module</span> <span class="title">Api</span></span></span><br><span class="line">   <span class="class"><span class="keyword">module</span> <span class="title">Admin</span></span></span><br><span class="line">     <span class="class"><span class="keyword">module</span> <span class="title">Analytics</span></span></span><br><span class="line">       <span class="class"><span class="keyword">class</span> <span class="title">ProductsController</span> &lt; V1::ApiController</span></span><br><span class="line">         <span class="function"><span class="keyword">def</span> <span class="title">top_sold</span></span></span><br><span class="line">           raise ParamsMissing, <span class="string">'params missing'</span> <span class="keyword">if</span> params_missing</span><br><span class="line">           raise InvalidDateInterval, <span class="string">'range of days is not allowed'</span> <span class="keyword">unless</span> check_date_interval</span><br><span class="line">           response = perform(</span><br><span class="line">             <span class="symbol">merchant_id:</span> current_merchant.id,</span><br><span class="line">             <span class="symbol">url:</span> analytics_params[<span class="symbol">:url</span>]</span><br><span class="line">             <span class="symbol">start_date:</span> analytics_params[<span class="symbol">:start_date</span>],</span><br><span class="line">             <span class="symbol">end_date:</span> analytics_params[<span class="symbol">:end_date</span>]</span><br><span class="line">           )</span><br><span class="line"></span><br><span class="line">           render <span class="symbol">json:</span> <span class="symbol">:</span><span class="symbol">:Analytics</span><span class="symbol">:</span><span class="symbol">:FormatService</span>.top_product_format(response[<span class="string">'metrics'</span>]), <span class="symbol">status:</span> <span class="symbol">:ok</span></span><br><span class="line">         <span class="keyword">rescue</span> RestClient::Exception =&gt; ex</span><br><span class="line">           render <span class="symbol">json:</span> JSON.parse(ex.response), <span class="symbol">status:</span> <span class="symbol">:unprocessable_entity</span></span><br><span class="line">         <span class="keyword">rescue</span> =&gt; ex</span><br><span class="line">           render <span class="symbol">json:</span> &#123; <span class="symbol">message:</span> ex.message &#125;, <span class="symbol">status:</span> <span class="symbol">:unprocessable_entity</span></span><br><span class="line">         <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">         ...</span><br><span class="line">         ...</span><br><span class="line">         ...</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Even the functions are separated, but let’s refresh the responsibility of the Rails <code>controller</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It coordinates the interaction between the user, the views, and the model. The controller is also a home to a number of important ancillary services. It is responsible for routing external requests to internal actions.</span><br></pre></td></tr></table></figure>
+<p>Simple and elegant. However, what we did here kind of violates the first SOLID principles which is <code>Single Responsibility</code>.</p>
+<p>Look at the line <code>6</code> to <code>7</code>, basically it’s doing the job besides the controller routing but to validate errors. If we want to customize and even extend more validations, might end up all the private methods in controller and action in front of action definition.</p>
+<p>Also, line <code>8</code> to <code>11</code> also comes across a request of a third party handler, even a <code>RestClient</code> or <code>HTTParty</code> request being put here looks out of place. If we want to extend more methods like <code>post</code> or <code>form</code> requests, definitely will bloat up the private functions being defined in the controller here.</p>
+<p>Of course, line <code>13</code> to <code>18</code> looks out of place too. We have a decorator/serializer here but strongly depend on the single attribute of the response. And other responses seem not to fit in this decorator. What if we want to change the format when the endpoint change, this looks like a violation of <code>Open/Close Principle</code> for me.</p>
+<p>Let’s refresh the definition of the <code>Open/Close Principle</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification</span><br></pre></td></tr></table></figure>
+<h3 id="What-I-Did-Here"><a href="#What-I-Did-Here" class="headerlink" title="What I Did Here"></a>What I Did Here</h3><p>Let’s first extract the request handler to its own module</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Anaylytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Request</span></span></span><br><span class="line">    <span class="keyword">include</span> Singleton</span><br><span class="line"></span><br><span class="line">    BASE_URL = <span class="string">"<span class="subst">#&#123;SERVICES[<span class="string">'anaylytics'</span>][<span class="string">'api_host'</span>]&#125;</span>"</span>.freeze</span><br><span class="line">    URLS = &#123;</span><br><span class="line">      <span class="symbol">top_sale:</span> <span class="string">'top_sale'</span></span><br><span class="line">    &#125;.freeze</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> &lt;&lt; self</span></span><br><span class="line">      extend Forwardable</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">method_added</span><span class="params">(method)</span></span></span><br><span class="line">        (<span class="class"><span class="keyword">class</span> &lt;&lt; self;</span> <span class="keyword">self</span>; <span class="keyword">end</span>).def_delegator <span class="symbol">:instance</span>, method</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(key, <span class="symbol">params:</span> &#123;&#125;)</span></span></span><br><span class="line">      RestClient::Request.execute(</span><br><span class="line">        <span class="symbol">method:</span> <span class="symbol">:get</span>,</span><br><span class="line">        <span class="symbol">url:</span> <span class="string">"<span class="subst">#&#123;BASE_URL&#125;</span>/<span class="subst">#&#123;URLS[key]&#125;</span>"</span>,</span><br><span class="line">        <span class="symbol">headers:</span> &#123; <span class="symbol">params:</span> params &#125;</span><br><span class="line">      )</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Looks good, right? Now the request has its own handler and we can simply define methods like <code>GET</code>, <code>POST</code> of our own and extend easily.</p>
+<p>And the singleton class with <code>method_added</code> being delegated, allows us not to write <code>.instance</code> all the time but to have the property of instance like class. This is a better thread safe management and allow us to extend some <code>ActiveSupport</code> methods that are specifically for instance methods.</p>
+<p>Now let’s define our <code>ErrorsHandler</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Anaylytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Request</span></span></span><br><span class="line">    <span class="class"><span class="keyword">module</span> <span class="title">ErrorsHandler</span></span></span><br><span class="line">      <span class="keyword">include</span> AcctiveSupport::Concern</span><br><span class="line">      <span class="keyword">include</span> ActiveSupport::Rescuable</span><br><span class="line"></span><br><span class="line">      included <span class="keyword">do</span></span><br><span class="line">        rescue_from RequestError, <span class="symbol">with:</span> <span class="symbol">:deny_access</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      protected</span><br><span class="line"></span><br><span class="line">      <span class="class"><span class="keyword">class</span> <span class="title">RequestError</span> &lt; StandardError</span></span><br><span class="line">		 ...</span><br><span class="line">		 ...</span><br><span class="line">		 ...</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      private</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">deny_access</span></span></span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Now we have customized errors and rescuer being defined in a single class. And adopt the use of few <code>ActiveSupport</code> modules to make it even cleaner like <code>rescue_from</code> allow us to define rescue function to its own method name.</p>
+<p>How about <code>ParamsMissing</code> and <code>DateInvalid</code> in the original controller action? Seems not being placed here, and that’s right! The logic sounds more like a model to me and I think should deserve to have its own validator here.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Analytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Request</span></span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ParamsValidator</span></span></span><br><span class="line">      <span class="keyword">include</span> ActiveModel::Validations</span><br><span class="line">      <span class="keyword">attr_accessor</span> <span class="symbol">:start_date</span>, <span class="symbol">:end_date</span></span><br><span class="line"></span><br><span class="line">      INTERVAL = <span class="number">3</span>.months.freeze</span><br><span class="line"></span><br><span class="line">      validates <span class="symbol">:start_date</span>, <span class="symbol">presence:</span> <span class="literal">true</span></span><br><span class="line">      validates <span class="symbol">:end_date</span>, <span class="symbol">presence:</span> <span class="literal">true</span></span><br><span class="line">      validate <span class="symbol">:belongs_to_interval</span></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(params = &#123;&#125;)</span></span></span><br><span class="line">        ...</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">belongs_to_interval</span></span></span><br><span class="line">        ...</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">validate!</span></span></span><br><span class="line">        raise ValidationError.new(errors.full_messages) <span class="keyword">if</span> invalid?</span><br><span class="line">        <span class="literal">true</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      <span class="class"><span class="keyword">class</span> <span class="title">ValidationError</span> &lt; StandardError;</span> <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>I sometimes find <code>ActiveModel::Validations</code> is very useful when we want to define something that’s not actually in current scope of Rails database model. And we can still adopt the use the simple and elegant validation solution to its own class.</p>
+<p>And last we see a format service that is running wild and not unified for each response in the original action. Let’s rename it as presenter to delegate the response object.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Analytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">module</span> <span class="title">ResponsePresenters</span></span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line">      <span class="keyword">attr_reader</span> <span class="symbol">:object</span>, <span class="symbol">:raw</span></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(object)</span></span></span><br><span class="line">        @object = JSON.parse(object)</span><br><span class="line">        @raw    = object</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">as_json</span><span class="params">(*)</span></span></span><br><span class="line">        ...</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">      private</span><br><span class="line"></span><br><span class="line">      ...</span><br><span class="line">      ...</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">OtherPresenter</span> &lt; Base</span></span><br><span class="line">      ...</span><br><span class="line">      ...</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>as_json</code> allows the object in <code>render json:</code> to be automatically called and transform to JSON string. It’s an example of <code>Liskov Subsitution Principle</code> or Duck Typing technique since we want the response-like object to be act like the <code>response</code> resulting from <code>RestClient</code></p>
+<p>Let’s look at our refreshed request handler</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">module</span> <span class="title">Anaylytics</span></span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Request</span></span></span><br><span class="line">    <span class="keyword">include</span> Singleton</span><br><span class="line"></span><br><span class="line">    BASE_URL = <span class="string">"<span class="subst">#&#123;SERVICES[<span class="string">'anaylytics'</span>][<span class="string">'api_host'</span>]&#125;</span>"</span>.freeze</span><br><span class="line">    URLS = &#123;</span><br><span class="line">      <span class="symbol">top_sale:</span> <span class="string">'top_sale'</span></span><br><span class="line">    &#125;.freeze</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> &lt;&lt; self</span></span><br><span class="line">      extend Forwardable</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">def</span> <span class="title">method_added</span><span class="params">(method)</span></span></span><br><span class="line">        (<span class="class"><span class="keyword">class</span> &lt;&lt; self;</span> <span class="keyword">self</span>; <span class="keyword">end</span>).def_delegator <span class="symbol">:instance</span>, method</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(key, <span class="symbol">params:</span> &#123;&#125;, <span class="symbol">presenter:</span> Analytics::ResponsePresenters::Base)</span></span></span><br><span class="line">      <span class="comment"># Added ParamsValidator</span></span><br><span class="line">      ParamsValidator.new(params).validate!</span><br><span class="line">      response = RestClient::Request.execute(</span><br><span class="line">        <span class="symbol">method:</span> <span class="symbol">:get</span>,</span><br><span class="line">        <span class="symbol">url:</span> <span class="string">"<span class="subst">#&#123;BASE_URL&#125;</span>/<span class="subst">#&#123;URLS[key]&#125;</span>"</span>,</span><br><span class="line">        <span class="symbol">headers:</span> &#123; <span class="symbol">params:</span> params &#125;</span><br><span class="line">      )</span><br><span class="line">      <span class="comment"># Dependencies inject</span></span><br><span class="line">      presenter.new(response)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>Since we do not need all the presenters at once, and probably only need to present/decorate the response at each request. The <code>Open/Close Principle</code> is quite suitable here which gives us the idea to inject the module class we want.</p>
+<p>Finally, our end result controller action will be like</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="keyword">include</span> Analytics::Request::ErrorsHandler</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top_sale</span></span></span><br><span class="line">  response = Anaylytics::Request.get(<span class="symbol">:top_sale</span>, <span class="symbol">params:</span> &#123;</span><br><span class="line">    <span class="symbol">merchant_id:</span> current_merchant.id,</span><br><span class="line">    <span class="symbol">start_date:</span> analytics_params[<span class="symbol">:start_date</span>],</span><br><span class="line">    <span class="symbol">end_date:</span> analytics_params[<span class="symbol">:end_date</span>]</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  render <span class="symbol">json:</span> response, <span class="symbol">status:</span> response.code</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>I think this example demestrate some of the SOLID principles and design patterns we can use in daily basis. Thanks for reading!</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/ruby/" rel="tag"># ruby</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/posts/1db9426/" rel="next" title="Airflow on Kubernetes Part I">
+                <i class="fa fa-chevron-left"></i> Airflow on Kubernetes Part I
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/posts/1db0a039/" rel="prev" title="First Step of Creating a Well-Rounded CI/CD Flow">
+                First Step of Creating a Well-Rounded CI/CD Flow <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bernie Chiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/berniechiu" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/berniechiu_tw" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Problem"><span class="nav-number">1.</span> <span class="nav-text">The Problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-I-Did-Here"><span class="nav-number">2.</span> <span class="nav-text">What I Did Here</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
