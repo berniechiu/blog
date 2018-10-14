@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="BC Blog">
 <meta property="og:description" content="The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the reada">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-14T03:51:36.671Z">
+<meta property="og:updated_time" content="2018-10-14T04:02:22.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Refactor Legacy Controller in a Good SOLID Pattern">
 <meta name="twitter:description" content="The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the reada">
@@ -343,6 +343,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/posts/4f0bed1f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="posts/4f0bed1f/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -467,6 +478,16 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -731,6 +752,45 @@
 
 
   
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://berniechiu.github.io/posts/4f0bed1f/';
+        this.page.identifier = 'posts/4f0bed1f/';
+        this.page.title = 'Refactor Legacy Controller in a Good SOLID Pattern';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
 
 
 

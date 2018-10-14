@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="BC Blog">
 <meta property="og:description" content="12345678910111213141516require &apos;net/http&apos;require &apos;uri&apos;require &apos;json&apos;def send_request(dep_dns, current_question, current_reply)  uri_path = &quot;/panel/ask/back_end/ask_requests/auth_request&quot;  uri = URI.pa">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-14T03:52:05.861Z">
+<meta property="og:updated_time" content="2018-10-14T04:02:22.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Simple Request Sending through Rails">
 <meta name="twitter:description" content="12345678910111213141516require &apos;net/http&apos;require &apos;uri&apos;require &apos;json&apos;def send_request(dep_dns, current_question, current_reply)  uri_path = &quot;/panel/ask/back_end/ask_requests/auth_request&quot;  uri = URI.pa">
@@ -342,6 +342,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/posts/5c7b6b12/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="posts/5c7b6b12/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -432,6 +443,16 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -671,6 +692,45 @@
 
 
   
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://berniechiu.github.io/posts/5c7b6b12/';
+        this.page.identifier = 'posts/5c7b6b12/';
+        this.page.title = 'Simple Request Sending through Rails';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
 
 
 

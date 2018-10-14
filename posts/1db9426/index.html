@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="BC Blog">
 <meta property="og:description" content="Building an industrial design on Kubernetes is hard, but building on top of pre-existed application without support is even harder. I found two repos are quite suitable for such cases Docker Airflow K">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-14T03:47:42.351Z">
+<meta property="og:updated_time" content="2018-10-14T04:02:22.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Airflow on Kubernetes Part I">
 <meta name="twitter:description" content="Building an industrial design on Kubernetes is hard, but building on top of pre-existed application without support is even harder. I found two repos are quite suitable for such cases Docker Airflow K">
@@ -343,6 +343,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/posts/1db9426/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="posts/1db9426/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -444,6 +455,16 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -683,6 +704,45 @@
 
 
   
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://berniechiu.github.io/posts/1db9426/';
+        this.page.identifier = 'posts/1db9426/';
+        this.page.title = 'Airflow on Kubernetes Part I';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
 
 
 

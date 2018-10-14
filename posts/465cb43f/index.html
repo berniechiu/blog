@@ -107,7 +107,7 @@
 <meta property="og:description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://berniechiu.github.io/blog/images/launch-rocket-sample-image.png">
-<meta property="og:updated_time" content="2018-10-14T03:51:00.227Z">
+<meta property="og:updated_time" content="2018-10-14T04:02:22.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Installing PostgresDB on Mac">
 <meta name="twitter:description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
@@ -344,6 +344,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/posts/465cb43f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="posts/465cb43f/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -439,6 +450,16 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -703,6 +724,45 @@
 
 
   
+
+  
+    <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://berniechiu.github.io/posts/465cb43f/';
+        this.page.identifier = 'posts/465cb43f/';
+        this.page.title = 'Installing PostgresDB on Mac';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
 
 
 
