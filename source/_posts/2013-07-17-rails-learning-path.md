@@ -1,5 +1,6 @@
 ---
 title: Rails Learning Path
+abbrlink: 84a4315c
 date: 2013-07-17 13:30:36
 tags:
 ---

@@ -1,8 +1,9 @@
 ---
 title: Refactor Legacy Controller in a Good SOLID Pattern
-date: 2018-09-10 08:51:18
 tags: ruby
-keywords: ruby,rails,design pattern
+keywords: 'ruby,rails,design pattern'
+abbrlink: 4f0bed1f
+date: 2018-09-10 08:51:18
 description:
 ---
 

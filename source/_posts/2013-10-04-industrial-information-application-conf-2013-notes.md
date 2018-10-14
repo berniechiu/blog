@@ -1,5 +1,6 @@
 ---
 title: Industrial Information Application Conf 2013 Notes
+abbrlink: a21e1c9b
 date: 2013-10-04 19:24:20
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: Installing PostgresDB on Mac
+abbrlink: 465cb43f
 date: 2016-01-31 20:39:27
 tags:
 ---

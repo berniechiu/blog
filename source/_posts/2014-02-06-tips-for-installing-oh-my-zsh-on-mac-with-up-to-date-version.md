@@ -1,5 +1,6 @@
 ---
 title: Tips for Installing Oh My ZSH on Mac with Up to Date Version
+abbrlink: '228462e4'
 date: 2014-02-06 20:02:56
 tags:
 ---

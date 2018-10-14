@@ -1,5 +1,6 @@
 ---
 title: How to Build And Install Local Ruby Gem
+abbrlink: d5918f3c
 date: 2013-10-06 19:27:53
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: When Did I Start to Engoy Programming
+abbrlink: c8a89c3a
 date: 2013-07-17 13:16:23
 tags:
 ---

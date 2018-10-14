@@ -1,5 +1,6 @@
 ---
 title: Tips for Image Migration to AWS S3
+abbrlink: 398c98be
 date: 2015-05-25 20:17:43
 tags:
 ---

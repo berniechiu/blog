@@ -1,5 +1,6 @@
 ---
 title: Common MongoDB Commands for Restore and Backup
+abbrlink: f8543605
 date: 2013-12-27 19:53:55
 tags:
 ---

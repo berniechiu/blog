@@ -1,5 +1,6 @@
 ---
 title: How to Start with Resque
+abbrlink: 83ba66de
 date: 2013-11-12 19:31:39
 tags:
 ---

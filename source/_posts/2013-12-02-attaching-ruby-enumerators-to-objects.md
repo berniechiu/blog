@@ -1,5 +1,6 @@
 ---
 title: Attaching Ruby Enumerators to Objects
+abbrlink: a34aea26
 date: 2013-12-02 19:41:18
 tags:
 ---

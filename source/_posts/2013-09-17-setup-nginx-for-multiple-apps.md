@@ -1,5 +1,6 @@
 ---
 title: Setup Nginx for Multiple Apps
+abbrlink: 557f8725
 date: 2013-09-17 19:19:32
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: Building Robust API Client with Her Gem
+abbrlink: 751b5e
 date: 2015-09-28 20:26:28
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: Ruby Resources
+abbrlink: 35c059f2
 date: 2013-08-28 13:34:43
 tags:
 ---

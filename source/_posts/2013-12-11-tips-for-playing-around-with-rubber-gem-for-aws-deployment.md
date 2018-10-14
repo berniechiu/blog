@@ -1,5 +1,6 @@
 ---
 title: Tips for Playing around with Rubber Gem for AWS Deployment
+abbrlink: 467527d0
 date: 2013-12-11 19:47:44
 tags:
 ---

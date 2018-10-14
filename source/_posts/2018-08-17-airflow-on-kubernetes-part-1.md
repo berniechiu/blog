@@ -1,8 +1,9 @@
 ---
 title: Airflow on Kubernetes Part I
-date: 2018-08-17 08:47:24
 tags: airflow
-keywords: kubernetes,k8s,airflow,devops
+keywords: 'kubernetes,k8s,airflow,devops'
+abbrlink: 1db9426
+date: 2018-08-17 08:47:24
 description:
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Comparing the Access of Ruby Instance Variables
+abbrlink: 61f73bee
 date: 2013-11-17 19:37:12
 tags:
 ---

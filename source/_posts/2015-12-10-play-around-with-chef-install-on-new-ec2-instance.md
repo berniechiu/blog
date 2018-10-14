@@ -1,5 +1,6 @@
 ---
 title: Play Around with Chef Install on New EC2 Instance
+abbrlink: d299683d
 date: 2015-12-10 20:28:51
 tags:
 ---

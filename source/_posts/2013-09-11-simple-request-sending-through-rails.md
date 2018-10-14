@@ -1,5 +1,6 @@
 ---
 title: Simple Request Sending through Rails
+abbrlink: 5c7b6b12
 date: 2013-09-11 19:14:44
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: Protect Ruby Array Object from Class Instance
+abbrlink: 9a371ac
 date: 2013-12-03 19:44:54
 tags:
 ---

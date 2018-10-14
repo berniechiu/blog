@@ -1,5 +1,6 @@
 ---
 title: Tips for Improve SQL Query Performance in Rails Using Counter Cache
+abbrlink: b541a315
 date: 2014-04-03 20:06:44
 tags:
 ---
