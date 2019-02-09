@@ -369,11 +369,16 @@
       
         
           
-            <p>One-line backup command for MongoDB<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodump --db &lt;dbname&gt;</span><br></pre></td></tr></table></figure></p>
-<p>One-line drop command for MongoDB Database.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongo &lt;dbname&gt; --<span class="built_in">eval</span> <span class="string">"db.dropDatabase()"</span></span><br></pre></td></tr></table></figure></p>
-<p>Then, we could easily resotre the backup folder that contains both BSON and JSON files.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mongorestore &lt;folder_name&gt; --db &lt;dbname&gt;</span><br></pre></td></tr></table></figure></p>
-
-          
+          One-line backup command for MongoDB1mongodump --db &lt;dbname&gt;
+One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dropDa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/f8543605/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -507,15 +512,15 @@
       
         
           
-            <p>When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a mess.</p>
-<p>First of all, default Instance is <strong>m1.medium</strong> for VM Image type, which is not free, so we have to set the YAML file to <strong>t1.micro</strong> according to Amazon Free Tier description.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image_type:</span> <span class="string">t1.micro</span></span><br><span class="line"><span class="attr">image_id:</span> <span class="string">'ami-5e215b0c'</span></span><br></pre></td></tr></table></figure>
-<p>Besides, newly created account has only 5 limited <strong>Security Groups</strong> for us to set up, so we have to make sure the Rubber does not generate more than that number.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_security_groups:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>Somehow the multiple intances have trouble connecting to each other, we might want to config the <code>pg_hba.conf</code> file to allow IP connection.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br><span class="line">host    all         all         172.XX.XX.XX/24   trust</span><br></pre></td></tr></table></figure>
-
-          
+          When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails applica
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/467527d0/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -649,10 +654,15 @@
       
         
           
-            <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PlayingCard</span></span></span><br><span class="line">  SUITS = <span class="string">%w&#123; clubs diamonds hearts spades &#125;</span></span><br><span class="line">  RANKS = <span class="string">%w&#123; 2 3 4 5 6 7 8 9 10 J Q K A &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Deck</span></span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cards</span></span></span><br><span class="line">      @cards.to_enum</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(n=<span class="number">1</span>)</span></span></span><br><span class="line">      @cards = []</span><br><span class="line">      SUITS.cycle(n) <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">        RANKS.cycle(<span class="number">1</span>) <span class="keyword">do</span> <span class="params">|r|</span></span><br><span class="line">          @cards &lt;&lt; <span class="string">"<span class="subst">#&#123;r&#125;</span> of <span class="subst">#&#123;s&#125;</span>"</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">deck = PlayingCard::Deck.new</span><br><span class="line">deck.cards &lt;&lt; <span class="string">"JOKER!!"</span> <span class="comment">#=&gt; FAIL!!</span></span><br></pre></td></tr></table></figure>
-<p>Playing around with this, knowing without the line <a href="mailto:`@cards.t" target="_blank" rel="noopener">`@cards.t</a>o_enum<code>, I could actually input a new item in the array with ease, but sometimes we don&#39;t want that. Therefore, given the enumerator like</code>to_enum` will allow for iterations through the array without absorbing changes.</p>
-
-          
+          12345678910111213141516171819202122class PlayingCard  SUITS = %w&#123; clubs diamonds hearts spades &#125;  RANKS = %w&#123; 2 3 4 5 6 7 8 9 10 J Q K 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/9a371ac/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -786,13 +796,16 @@
       
         
           
-            <p>While reading “The Well-Grounded Rubyist”, I found this topic quite interesting.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = <span class="string">%w&#123; David Black Yukihiro Matsumoto &#125;</span></span><br><span class="line">e = names.enum_for(<span class="symbol">:select</span>)</span><br></pre></td></tr></table></figure>
-<p>I could call <code>enum_for</code> on the object from which I want the enumerator to draw its iterations.</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.each &#123; <span class="params">|n|</span> n.<span class="keyword">include</span>?(<span class="string">'a'</span>) &#125; <span class="comment">#=&gt; ["David", "Black", "Matsumoto"]</span></span><br></pre></td></tr></table></figure>
-<p>By calling upon <code>.each</code> method, I was able to allow the iterator to serve as a kind of front end to array’s <code>select</code>.</p>
-
-          
+          While reading “The Well-Grounded Rubyist”, I found this topic quite interesting.
+12names = %w&#123; David Black Yukihiro Matsumoto &#125;e = names.enu
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/a34aea26/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -926,13 +939,15 @@
       
         
           
-            <p>Sometimes I get a little confused about the difference between accessing an instance attribute via <code>self.attribute</code> and by <code>@attribute</code>, so one day I look up the <a href="http://stackoverflow.com/questions/4639271/directly-accessing-an-instance-variable-vs-using-an-accessor-method" target="_blank" rel="noopener">stackoverflow</a> to clear up my thoughts. The answers below are some good tips on the subject based on the site.</p>
-<h2 id="Here’s-What-the-Best-Answer-Would-Suggest"><a href="#Here’s-What-the-Best-Answer-Would-Suggest" class="headerlink" title="Here’s What the Best Answer Would Suggest"></a>Here’s What the Best Answer Would Suggest</h2><p><code>self.attribute</code> calls the method attribute.<br><code>self.attribute = value</code> calls the method <code>attribute=</code> with the argument <code>value</code>.<br><code>@attribute</code> and <code>@attribute = value</code> get/set the value of the instance variable @attribute.</p>
-<p>So basically they’re two entirely different things.</p>
-<p>However if you call <code>attr_accessor :attribute</code> it defines the method attribute to return <code>@attribute</code> and the method <code>attribute=(value)</code> to set <code>@attribute = value</code>. So in that case, there is no difference.</p>
-<h2 id="The-Comment-is-also-Helpful"><a href="#The-Comment-is-also-Helpful" class="headerlink" title="The Comment is also Helpful"></a>The Comment is also Helpful</h2><p>Note that it is generally recommended to use <code>self</code>. (unless you’re writing the getter/setter method) even if you currently have attr_accessor. This protects you from additional refactor work and bugs if you later change the accessor method(s) to do more than just get/set the instance variable. (Or if someone else patches or subclasses your work.)</p>
-
-          
+          Sometimes I get a little confused about the difference between accessing an instance attribute via self.attribute and by @attribute, so one day I look
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/61f73bee/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1066,12 +1081,18 @@
       
         
           
-            <p>Start the Resque Scheduler</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle <span class="built_in">exec</span> rake resque:scheduler</span><br></pre></td></tr></table></figure>
-<p>Start the Resque Worker for All Queues</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ QUEUE=* bundle <span class="built_in">exec</span> rake environment resque:work</span><br></pre></td></tr></table></figure>
-
-          
+          Start the Resque Scheduler
+1$ bundle exec rake resque:scheduler
+Start the Resque Worker for All Queues
+1$ QUEUE=* bundle exec rake environment resque:
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/83ba66de/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1205,11 +1226,15 @@
       
         
           
-            <h3 id="Build-Local-Gem"><a href="#Build-Local-Gem" class="headerlink" title="Build Local Gem"></a>Build Local Gem</h3><p>Sometimes it’s really neat to customize or fork some Gems from GitHub, and this is how I install my modified version of a Gem locally and install it at will.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ gem build bootstrappers.gemspec</span><br><span class="line">Successfully built RubyGem</span><br><span class="line">Name: bootstrappers</span><br><span class="line">Version: 0.2.3</span><br><span class="line">File: bootstrappers-0.2.3.gem</span><br></pre></td></tr></table></figure>
-<h3 id="Insall-Local-Gem"><a href="#Insall-Local-Gem" class="headerlink" title="Insall Local Gem"></a>Insall Local Gem</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem install ./bootstrappers-0.2.3.gem</span><br><span class="line">Successfully installed bootstrappers-0.2.3.gem</span><br><span class="line">1 gem installed</span><br></pre></td></tr></table></figure>
-
-          
+          Build Local GemSometimes it’s really neat to customize or fork some Gems from GitHub, and this is how I install my modified version of a Gem locally a
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/d5918f3c/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1343,40 +1368,21 @@
       
         
           
-            <h2 id="從產業現況出發，探討-ICT-應用如何發揮應有的價值-鼎新電腦顧問"><a href="#從產業現況出發，探討-ICT-應用如何發揮應有的價值-鼎新電腦顧問" class="headerlink" title="從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)"></a>從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)</h2><h4 id="產業現況與挑戰"><a href="#產業現況與挑戰" class="headerlink" title="產業現況與挑戰"></a>產業現況與挑戰</h4><ul>
-<li>把產品的需求做出來是以前企業的主要利潤</li>
-<li>現在目標是增加接單能力，減少客戶流失率</li>
-</ul>
-<h4 id="客戶希望從產品得到的價值"><a href="#客戶希望從產品得到的價值" class="headerlink" title="客戶希望從產品得到的價值"></a>客戶希望從產品得到的價值</h4><ul>
-<li>產品能幫客戶解決問題，才是有 <em>價值</em> 的產品</li>
-<li>設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&gt; 訂出行動方案 -&gt; 立下衡量指標 -&gt; 持續監控</li>
-<li><strong><em>縮短允交</em></strong> (減少交案的期限，增加競爭力) OS: <strong>聽起來像血汗工廠</strong> Orz<ul>
-<li>縮短訂單文件簽核<ul>
-<li>排程甘特圖</li>
-<li>縮短原物料請購頻率</li>
-<li>按日生產計畫建立驗收優先程序</li>
-<li>合理銷售預測計畫排定</li>
-<li>提早掌握生產進度問題</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>BOM (Bill of Material) 表用來表達成品、半成品、材料組成和用量的關係</li>
-</ul>
-<h4 id="準時達交的問題行動方案"><a href="#準時達交的問題行動方案" class="headerlink" title="準時達交的問題行動方案"></a>準時達交的問題行動方案</h4><ul>
-<li>掌握關鍵資源供給</li>
-<li>確保計畫落實執行</li>
-<li>強化急單應變能力</li>
-</ul>
-<h2 id="由創新創業談產業電子化之發展趨勢-成大呂教授"><a href="#由創新創業談產業電子化之發展趨勢-成大呂教授" class="headerlink" title="由創新創業談產業電子化之發展趨勢 (成大呂教授)"></a>由創新創業談產業電子化之發展趨勢 (成大呂教授)</h2><h4 id="經營模式"><a href="#經營模式" class="headerlink" title="經營模式"></a>經營模式</h4><ul>
-<li>有時候先尋找 Venture Capital (創投公司) 可以是一開始創業的資金來源</li>
-</ul>
-<h4 id="問題與討論"><a href="#問題與討論" class="headerlink" title="問題與討論"></a>問題與討論</h4><ul>
-<li>因為雲端才有臉書??? 這句話真詭譎…雲端應該是解決網路負載的 Bottleneck 才對…不然其實線上網路軟體的應用在以前其實也已經蠻多的了</li>
-<li>我覺得整體的軟體設計規劃才是台灣所欠缺的，並不是東西(功能)做出來就好了，還要考慮到使用者層面、架構層面(擴充延展性)、體驗層面等等…</li>
-</ul>
+          從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)產業現況與挑戰
+把產品的需求做出來是以前企業的主要利潤
+現在目標是增加接單能力，減少客戶流失率
 
-          
+客戶希望從產品得到的價值
+產品能幫客戶解決問題，才是有 價值 的產品
+設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&g
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/a21e1c9b/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1510,13 +1516,15 @@
       
         
           
-            <p>If anyone wants to set up a few testing sites on only one IP server, we could modify the Nginx config file to open different port for servers deployment.</p>
-<p>First, look for the config file</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
-<p>Then, take the below codes for sample.</p>
-<figure class="highlight bash"><figcaption><span>nginx/conf/nginx.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 180;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  root /home/ruling/orbit_1/public;   <span class="comment"># &lt;--- be sure to point to 'public'!</span></span><br><span class="line">  passenger_enabled on;</span><br><span class="line">  rails_env production;</span><br><span class="line"></span><br><span class="line">  location /static/ &#123;</span><br><span class="line">    root /home/ruling/orbit_1/public;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  location ~ ^/(assets)/  &#123;</span><br><span class="line">    root /home/ruling/orbit_1/public;</span><br><span class="line">    expires max;</span><br><span class="line">    add_header Cache-Control public;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">  listen 280;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  root /home/ruling/orbit_2/public;   <span class="comment"># &lt;--- be sure to point to 'public'!</span></span><br><span class="line">  passenger_enabled on;</span><br><span class="line">  rails_env production;</span><br><span class="line"></span><br><span class="line">  location /static/ &#123;</span><br><span class="line">    root /home/ruling/orbit_2/public;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  location ~ ^/(assets)/  &#123;</span><br><span class="line">    root /home/ruling/orbit_2/public;</span><br><span class="line">    expires max;</span><br><span class="line">    add_header Cache-Control public;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          If anyone wants to set up a few testing sites on only one IP server, we could modify the Nginx config file to open different port for servers deployme
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/557f8725/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1650,10 +1658,15 @@
       
         
           
-            <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'net/http'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'uri'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'json'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_request</span><span class="params">(dep_dns, current_question, current_reply)</span></span></span><br><span class="line">  uri_path = <span class="string">"/panel/ask/back_end/ask_requests/auth_request"</span></span><br><span class="line">  uri = URI.parse(<span class="string">"http://<span class="subst">#&#123;dep_dns&#125;</span><span class="subst">#&#123;uri_path&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line">  body = &#123; <span class="string">'auth_token'</span> =&gt; <span class="string">'3kjlfksjDFJ'</span> &#125;</span><br><span class="line"></span><br><span class="line">  http = Net::HTTP.new(uri.host, uri.port)</span><br><span class="line">  request = Net::HTTP::Post.new(uri.request_uri)</span><br><span class="line">  request.set_form_data(body)</span><br><span class="line">  response = http.request(request)</span><br><span class="line">  puts <span class="string">"Response <span class="subst">#&#123;response.code&#125;</span> <span class="subst">#&#123;response.message&#125;</span>: <span class="subst">#&#123;response.body&#125;</span>"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>After then, we write a route for the request to take place, and build a controller action to send back the corresponding response.</p>
-
-          
+          12345678910111213141516require 'net/http'require 'uri'require 'json'def send_request(dep_dns, current_question, current_reply)  uri_path = "/panel/ask
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/posts/5c7b6b12/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1812,7 +1825,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-"></i>
   </span>
