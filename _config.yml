@@ -325,8 +325,8 @@ theme_config:
   # Automatically Excerpt. Not recommend.
   # Please use <!-- more --> in the post to control excerpt accurately.
   auto_excerpt:
-    enable: false
-    length: 150
+    enable: true
+    length: 300
 
   # Post meta display settings
   post_meta:
