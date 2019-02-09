@@ -370,7 +370,10 @@
         
           
           
-Long time ago, I joined my previous company PaGamO and the deployment is still raw, using git clone and some manual restart script specifically for t
+Long time ago, I joined my previous company PaGamO and the deployment is still raw, using git clone and some manual restart script specifically for the project, so I decided to give it a change.
+The above figure is the first draft for my redesign CI/CD, also with the help of few gems like:
+
+Asset S
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -512,7 +515,8 @@ Long time ago, I joined my previous company PaGamO and the deployment is still r
       
         
           
-          The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time,
+          The ProblemRefactoring is hard, but I believe looking at the code that is hard to read is even poisonous to the team. Code smell happens all the time, and how we refactor it not only improve the readability but also provide a good sample for incoming juniors’ career development in the company.
+Let’s
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -655,7 +659,10 @@ Long time ago, I joined my previous company PaGamO and the deployment is still r
         
           
           Building an industrial design on Kubernetes is hard, but building on top of pre-existed application without support is even harder.
-I found two repos 
+I found two repos are quite suitable for such cases
+Docker Airflow
+Kube Airflow
+Due to the fact that Kube Airflow expects Helm chart supports for K8S in mind and less a
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -797,7 +804,8 @@ I found two repos
       
         
           
-          Since I’m getting a new Mac recently, I have realized that pow is no longer being maitained and lack of several features like SSL support and WebSocke
+          Since I’m getting a new Mac recently, I have realized that pow is no longer being maitained and lack of several features like SSL support and WebSockets. I think it’s time to switch for a better alternative at this time being.
+Getting Puma-Dev on MacOSInstall Puma-Dev1$ brew install puma/puma/puma-d
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -940,7 +948,8 @@ I found two repos
         
           
           Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine.
-Install HomebrewHomebrewWe’ll will start
+Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a package manager for OSX. Just follow the steps on the official website.
+Brew Install PostgresEnter b
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1085,7 +1094,11 @@ Install HomebrewHomebrewWe’ll will start
           GitHub Connection IssuesNot sure why server’s SSH connection use the different algoritems for GitHub connection
 References:
 
-http://www.openssh.com/le
+http://www.openssh.com/legacy.html
+https://stribika.github.io/2015/01/04/secure-secure-shell.html
+https://developer.github.com/guides/using-ssh-agent-forwarding
+
+How to Resolv
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1229,7 +1242,8 @@ http://www.openssh.com/le
           
           The topic sounds a little awkward, but there’s really a gem called Her
 Here’s the official documentationhttp://www.her-rb.org/
-InstallationIn your Gem
+InstallationIn your Gemfile, add12gem "her"gem "faraday", "~&gt; 0.8.10"
+I specified the faraday version to be locked at ~&gt; 0.8.10 because there’s something wrong the the
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1372,7 +1386,7 @@ InstallationIn your Gem
         
           
           ObjectivesWhen migrating to S3, there comes a time that you finished uploading your server images, but users continue to upload afterwards.
-This is an
+This is an issue for us because we don’t want to use Asset Sync all the time since it might slow down the server power because it replaces them with all the fil
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1515,7 +1529,7 @@ This is an
         
           
           I recently discovered that COUNTER CACHE is a great way to improve some SQL query performance across relational tables.
-Since I have  TOP LINKS showin
+Since I have  TOP LINKS showing on my SIMPLE REDDIT web app, I encountered some issues to scale the top links performance with Rails. Later, I found that counter cache might be the
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1657,7 +1671,9 @@ Since I have  TOP LINKS showin
       
         
           
-          In order to reduce the frustration that I’ve encountered while installing oh-my-zsh on my new MacBook, I decided to write down this post to remind me 
+          In order to reduce the frustration that I’ve encountered while installing oh-my-zsh on my new MacBook, I decided to write down this post to remind me of some steps that I need to beware.
+Install ZSH from Homebrew1$ brew install zsh
+Make sure the ZSH is running the Homebrew version, not the built-in 
           ...
           <!--noindex-->
           <div class="post-button text-center">

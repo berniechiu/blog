@@ -370,7 +370,8 @@
         
           
           One-line backup command for MongoDB1mongodump --db &lt;dbname&gt;
-One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dropDa
+One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dropDatabase()"
+Then, we could easily resotre the backup folder that contains both BSON and JSON files.1$ mongorestore &lt;folder_name&gt; --db &lt;dbname&g
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -512,7 +513,8 @@ One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dr
       
         
           
-          When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails applica
+          When deploying on Amazon EC2, we have to be careful about the instances we choose. RailsCasts has provided a screencast on how to deploy Rails application on EC2, but the default values are quite a mess.
+First of all, default Instance is m1.medium for VM Image type, which is not free, so we have to 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -654,7 +656,7 @@ One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dr
       
         
           
-          12345678910111213141516171819202122class PlayingCard  SUITS = %w&#123; clubs diamonds hearts spades &#125;  RANKS = %w&#123; 2 3 4 5 6 7 8 9 10 J Q K 
+          12345678910111213141516171819202122class PlayingCard  SUITS = %w&#123; clubs diamonds hearts spades &#125;  RANKS = %w&#123; 2 3 4 5 6 7 8 9 10 J Q K A &#125;  class Deck    def cards      @cards.to_enum    end    def initialize(n=1)      @cards = []      SUITS.cycle(n) do |s|        RANKS.cycle(1) 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -797,7 +799,9 @@ One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dr
         
           
           While reading “The Well-Grounded Rubyist”, I found this topic quite interesting.
-12names = %w&#123; David Black Yukihiro Matsumoto &#125;e = names.enu
+12names = %w&#123; David Black Yukihiro Matsumoto &#125;e = names.enum_for(:select)
+I could call enum_for on the object from which I want the enumerator to draw its iterations.
+1e.each &#123; |n| n.include?('a') &#125; 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -939,7 +943,8 @@ One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dr
       
         
           
-          Sometimes I get a little confused about the difference between accessing an instance attribute via self.attribute and by @attribute, so one day I look
+          Sometimes I get a little confused about the difference between accessing an instance attribute via self.attribute and by @attribute, so one day I look up the stackoverflow to clear up my thoughts. The answers below are some good tips on the subject based on the site.
+Here’s What the Best Answer Woul
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1084,8 +1089,9 @@ One-line drop command for MongoDB Database.1$ mongo &lt;dbname&gt; --eval "db.dr
           Start the Resque Scheduler
 1$ bundle exec rake resque:scheduler
 Start the Resque Worker for All Queues
-1$ QUEUE=* bundle exec rake environment resque:
-          ...
+1$ QUEUE=* bundle exec rake environment resque:work
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/posts/83ba66de/#more" rel="contents">
@@ -1226,7 +1232,9 @@ Start the Resque Worker for All Queues
       
         
           
-          Build Local GemSometimes it’s really neat to customize or fork some Gems from GitHub, and this is how I install my modified version of a Gem locally a
+          Build Local GemSometimes it’s really neat to customize or fork some Gems from GitHub, and this is how I install my modified version of a Gem locally and install it at will.
+12345$ gem build bootstrappers.gemspecSuccessfully built RubyGemName: bootstrappersVersion: 0.2.3File: bootstrappers-0.2.3.gem
+
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1374,7 +1382,19 @@ Start the Resque Worker for All Queues
 
 客戶希望從產品得到的價值
 產品能幫客戶解決問題，才是有 價值 的產品
-設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&g
+設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&gt; 訂出行動方案 -&gt; 立下衡量指標 -&gt; 持續監控
+縮短允交 (減少交案的期限，增加競爭力) OS: 聽起來像血汗工廠 Orz
+縮短訂單文件簽核
+排程甘特圖
+縮短原物料請購頻率
+按日生產計畫建立驗收優先程序
+合理銷售預測計畫排定
+提早掌握生產進度問題
+
+
+
+
+BOM (Bill of
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1516,7 +1536,11 @@ Start the Resque Worker for All Queues
       
         
           
-          If anyone wants to set up a few testing sites on only one IP server, we could modify the Nginx config file to open different port for servers deployme
+          If anyone wants to set up a few testing sites on only one IP server, we could modify the Nginx config file to open different port for servers deployment.
+First, look for the config file
+1$ vi nginx/conf/nginx.conf
+Then, take the below codes for sample.
+nginx/conf/nginx.conf12345678910111213141516171
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1658,7 +1682,7 @@ Start the Resque Worker for All Queues
       
         
           
-          12345678910111213141516require 'net/http'require 'uri'require 'json'def send_request(dep_dns, current_question, current_reply)  uri_path = "/panel/ask
+          12345678910111213141516require 'net/http'require 'uri'require 'json'def send_request(dep_dns, current_question, current_reply)  uri_path = "/panel/ask/back_end/ask_requests/auth_request"  uri = URI.parse("http://#&#123;dep_dns&#125;#&#123;uri_path&#125;")  body = &#123; 'auth_token' =&gt; '3kjlfksjD
           ...
           <!--noindex-->
           <div class="post-button text-center">
