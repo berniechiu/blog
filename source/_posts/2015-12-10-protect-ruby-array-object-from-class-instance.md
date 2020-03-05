@@ -29,4 +29,4 @@ deck = PlayingCard::Deck.new
 deck.cards << "JOKER!!" #=> FAIL!!
 ```
 
-Playing around with this, knowing without the line `@cards.to_enum`, I could actually input a new item in the array with ease, but sometimes we don't want that. Therefore, given the enumerator like `to_enum` will allow for iterations through the array without absorbing changes.
+Playing around with this, knowing without the line `cards.to_enum`, I could actually input a new item in the array with ease, but sometimes we don't want that. Therefore, given the enumerator like `to_enum` will allow for iterations through the array without absorbing changes.
