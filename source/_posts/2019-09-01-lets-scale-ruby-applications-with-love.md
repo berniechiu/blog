@@ -17,4 +17,6 @@ By giving few real world examples on how we optimize large scaled apps in practi
 
 <script async class="speakerdeck-embed" data-id="656cb9fbffb64d348f46898b9eb93371" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+----------------------
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O1zTYLWpmw4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
