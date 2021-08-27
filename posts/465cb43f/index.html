@@ -1,35 +1,405 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"berniechiu.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"b2t":false,"scrollpercent":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Installing PostgresDB on Mac">
+<meta property="og:url" content="https://berniechiu.github.io/blog/posts/465cb43f/index.html">
+<meta property="og:site_name" content="BC Blog">
+<meta property="og:description" content="Open a TermianlAs a developer, you either user iTerm2 or built-in Terminal very often. Both of them are fine. Install HomebrewHomebrewWe’ll will start installing Postgres through homebrew, which is a">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://berniechiu.github.io/blog/images/launch-rocket-sample-image.png">
+<meta property="article:published_time" content="2016-01-31T12:39:27.000Z">
+<meta property="article:modified_time" content="2018-10-14T04:02:22.000Z">
+<meta property="article:author" content="Bernie Chiu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://berniechiu.github.io/blog/images/launch-rocket-sample-image.png">
+
+<link rel="canonical" href="https://berniechiu.github.io/blog/posts/465cb43f/">
 
 
-{% block content %}
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+  <title>Installing PostgresDB on Mac | BC Blog</title>
+  
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% endif %}
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta custom-logo">
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="[object Object]" alt="BC Blog">
+        </a>
+      </div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BC Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Chase Excellence, Success will Follow</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/blog/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/465cb43f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Installing PostgresDB on Mac
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-01-31 20:39:27" itemprop="dateCreated datePublished" datetime="2016-01-31T20:39:27+08:00">2016-01-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Open-a-Termianl"><a href="#Open-a-Termianl" class="headerlink" title="Open a Termianl"></a>Open a Termianl</h3><p>As a developer, you either user <a target="_blank" rel="noopener" href="https://www.iterm2.com/">iTerm2</a> or built-in Terminal very often. Both of them are fine.</p>
+<h3 id="Install-Homebrew"><a href="#Install-Homebrew" class="headerlink" title="Install Homebrew"></a>Install Homebrew</h3><p><a target="_blank" rel="noopener" href="http://brew.sh/">Homebrew</a><br>We’ll will start installing Postgres through homebrew, which is a package manager for OSX. Just follow the steps on the official website.</p>
+<h3 id="Brew-Install-Postgres"><a href="#Brew-Install-Postgres" class="headerlink" title="Brew Install Postgres"></a>Brew Install Postgres</h3><p>Enter <code>brew install postgres</code> to tell brew to install PostgreSQL for you. You’ll see messages to tell you start the postgres now, but I suggest to manage our background progress in another way.</p>
+<h3 id="Install-LaunchRocket"><a href="#Install-LaunchRocket" class="headerlink" title="Install LaunchRocket"></a>Install LaunchRocket</h3><p><img src="/blog/images/launch-rocket-sample-image.png" alt="lauch-rocket-sample-image.png"></p>
+<p>I believe <a target="_blank" rel="noopener" href="https://github.com/jimbojsb/launchrocket">LaunchRocket</a> is great for managing brew-installed services, all you need to do is to click start and the service will be up. Becuase I use my personal laptop for many things, I don’t want most of the service to run automatically at startup to eat up my memory. Therefore, this is a great tool to work with.</p>
+<h3 id="Create-a-Default-DB-Based-on-Your-Username"><a href="#Create-a-Default-DB-Based-on-Your-Username" class="headerlink" title="Create a Default DB Based on Your Username"></a>Create a Default DB Based on Your Username</h3><p>Since Postgres use the username as a default DB entrance. Type <code>createdb &#39;whoami&#39;</code> in your terminal to make sure you can have a database to enter and test.</p>
+<h3 id="Try-Out-the-psql-Command"><a href="#Try-Out-the-psql-Command" class="headerlink" title="Try Out the psql Command"></a>Try Out the psql Command</h3><p>Try out <code>psql</code> in the terminal. If you enter the command-line interface to PostgreSQL, then you’re good to go!</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/posts/d299683d/" rel="prev" title="Play Around with Chef Install on New EC2 Instance">
+      <i class="fa fa-chevron-left"></i> Play Around with Chef Install on New EC2 Instance
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/posts/add7b875/" rel="next" title="Switching to puma-dev on New MacOS">
+      Switching to puma-dev on New MacOS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-a-Termianl"><span class="nav-number">1.</span> <span class="nav-text">Open a Termianl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Homebrew"><span class="nav-number">2.</span> <span class="nav-text">Install Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brew-Install-Postgres"><span class="nav-number">3.</span> <span class="nav-text">Brew Install Postgres</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-LaunchRocket"><span class="nav-number">4.</span> <span class="nav-text">Install LaunchRocket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-Default-DB-Based-on-Your-Username"><span class="nav-number">5.</span> <span class="nav-text">Create a Default DB Based on Your Username</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Try-Out-the-psql-Command"><span class="nav-number">6.</span> <span class="nav-text">Try Out the psql Command</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bernie Chiu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/berniechiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;berniechiu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/berniechewy" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;berniechewy" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

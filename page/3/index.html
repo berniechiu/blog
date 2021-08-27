@@ -1,23 +1,729 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+<link rel="stylesheet" href="/blog/css/main.css">
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"berniechiu.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"b2t":false,"scrollpercent":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+  <meta property="og:type" content="website">
+<meta property="og:title" content="BC Blog">
+<meta property="og:url" content="https://berniechiu.github.io/blog/page/3/index.html">
+<meta property="og:site_name" content="BC Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Bernie Chiu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://berniechiu.github.io/blog/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>BC Blog - Chase Excellence, Success will Follow</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="[object Object]" alt="BC Blog">
+        </a>
+      </div>
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BC Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Chase Excellence, Success will Follow</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/blog/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/5c7b6b12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/posts/5c7b6b12/" class="post-title-link" itemprop="url">Simple Request Sending through Rails</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-09-11 19:14:44" itemprop="dateCreated datePublished" datetime="2013-09-11T19:14:44+08:00">2013-09-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">&#x27;net/http&#x27;</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;uri&#x27;</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">&#x27;json&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_request</span><span class="params">(dep_dns, current_question, current_reply)</span></span></span><br><span class="line">  uri_path = <span class="string">&quot;/panel/ask/back_end/ask_requests/auth_request&quot;</span></span><br><span class="line">  uri = URI.parse(<span class="string">&quot;http://<span class="subst">#&#123;dep_dns&#125;</span><span class="subst">#&#123;uri_path&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">  body = &#123; <span class="string">&#x27;auth_token&#x27;</span> =&gt; <span class="string">&#x27;3kjlfksjDFJ&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line">  http = Net::HTTP.new(uri.host, uri.port)</span><br><span class="line">  request = Net::HTTP::Post.new(uri.request_uri)</span><br><span class="line">  request.set_form_data(body)</span><br><span class="line">  response = http.request(request)</span><br><span class="line">  puts <span class="string">&quot;Response <span class="subst">#&#123;response.code&#125;</span> <span class="subst">#&#123;response.message&#125;</span>: <span class="subst">#&#123;response.body&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>After then, we write a route for the request to take place, and build a controller action to send back the corresponding response.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/ceb8c668/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/posts/ceb8c668/" class="post-title-link" itemprop="url">Allow Two Rails Servers Running on the Same Session</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-09-11 19:11:17" itemprop="dateCreated datePublished" datetime="2013-09-11T19:11:17+08:00">2013-09-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Rails server runs the <code>development</code> server on default, in order to open another one for HTTP communication test, we need to apply few options on <code>rails server</code> command.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ RAILS_ENV=production rails s --port=4000 --pid /home/bernie/orbit_intern/orbit/tmp/pids/server_p.pid</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/35c059f2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/posts/35c059f2/" class="post-title-link" itemprop="url">Ruby Resources</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-08-28 13:34:43" itemprop="dateCreated datePublished" datetime="2013-08-28T13:34:43+08:00">2013-08-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Books"><a href="#Books" class="headerlink" title="Books"></a>Books</h3><ul>
+<li>Flanagan, David and Yukihiro Matsumoto, “The Ruby Programming Language” (2008) - <a target="_blank" rel="noopener" href="http://shop.oreilly.com/product/9780596516178.do">http://shop.oreilly.com/product/9780596516178.do</a></li>
+<li>Metz, Sandi, “Practical Object-Oriented Design in Ruby: An Agile Primer” (2012) - <a target="_blank" rel="noopener" href="http://www.poodr.info/">http://www.poodr.info/</a></li>
+<li>Olsen, Ross, “Design Patterns in Ruby” (2007) - <a target="_blank" rel="noopener" href="http://eloquentruby.com/">http://eloquentruby.com/</a></li>
+<li>Olsen, Ross, “Eloquent Ruby (Addison-Wesley Professional Ruby Series)” (2011) - <a target="_blank" rel="noopener" href="http://eloquentruby.com/">http://eloquentruby.com/</a></li>
+<li>Thomas, Dave, Chad Fowler and Andy Hunt, “Programming Ruby 1.9 &amp; 2.0 (4th ed.): The Pragmatic Programmer’s Guide” (2013) - <a target="_blank" rel="noopener" href="http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0">http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0</a></li>
+</ul>
+<h3 id="Communities"><a href="#Communities" class="headerlink" title="Communities"></a>Communities</h3><ul>
+<li>Ruby Forum - <a target="_blank" rel="noopener" href="http://www.ruby-forum.com/">http://www.ruby-forum.com/</a></li>
+<li>stackoverflow’s Newest ‘ruby’ Questions - <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/tagged/ruby">http://stackoverflow.com/questions/tagged/ruby</a></li>
+</ul>
+<h3 id="Conferences"><a href="#Conferences" class="headerlink" title="Conferences"></a>Conferences</h3><ul>
+<li>Confreaks - <a target="_blank" rel="noopener" href="http://confreaks.com/events">http://confreaks.com/events</a></li>
+</ul>
+<h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><ul>
+<li>Heroku: Cloud Application Platform - <a target="_blank" rel="noopener" href="https://www.heroku.com/">https://www.heroku.com/</a></li>
+<li>AppFog: PaaS for public and private clouds - <a target="_blank" rel="noopener" href="https://www.appfog.com/">https://www.appfog.com/</a></li>
+</ul>
+<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><ul>
+<li>Ruby Programming Language - <a target="_blank" rel="noopener" href="http://www.ruby-lang.org/en/">http://www.ruby-lang.org/en/</a></li>
+<li>Ruby-Doc.org: Documenting the Ruby Language - <a target="_blank" rel="noopener" href="http://ruby-doc.org/">http://ruby-doc.org/</a></li>
+</ul>
+<h3 id="Gems"><a href="#Gems" class="headerlink" title="Gems"></a>Gems</h3><ul>
+<li>Pry: an IRB alternative and runtime developer console - <a target="_blank" rel="noopener" href="http://pryrepl.org/">http://pryrepl.org/</a></li>
+<li>RubyGems.org - <a target="_blank" rel="noopener" href="http://rubygems.org/">http://rubygems.org/</a></li>
+<li>The Ruby Toolbox: indexed site for gems - <a target="_blank" rel="noopener" href="https://www.ruby-toolbox.com/">https://www.ruby-toolbox.com/</a></li>
+</ul>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><ul>
+<li>Pik: Ruby version manager (Win) - <a target="_blank" rel="noopener" href="https://github.com/vertiginous/pik">https://github.com/vertiginous/pik</a></li>
+<li>RubyInstaller (Win, OS X) - <a target="_blank" rel="noopener" href="http://rubyinstaller.org/">http://rubyinstaller.org/</a></li>
+<li>rbenv: Simple Ruby version management (OS X, Linux) - <a target="_blank" rel="noopener" href="http://github.com/sstephenson/rbenv">http://github.com/sstephenson/rbenv</a></li>
+<li>RVM: Ruby Version Management (OS X, Linux) - <a target="_blank" rel="noopener" href="https://rvm.io/">https://rvm.io/</a></li>
+</ul>
+<h3 id="Integrated-Development-Environments-IDEs"><a href="#Integrated-Development-Environments-IDEs" class="headerlink" title="Integrated Development Environments (IDEs)"></a>Integrated Development Environments (IDEs)</h3><ul>
+<li>3rdRail - <a target="_blank" rel="noopener" href="http://www.embarcadero.com/products/3rdrail">http://www.embarcadero.com/products/3rdrail</a></li>
+<li>Komodo IDE - <a target="_blank" rel="noopener" href="http://www.activestate.com/komodo-ide">http://www.activestate.com/komodo-ide</a></li>
+<li>RDE (Win) - <a target="_blank" rel="noopener" href="http://homepage2.nifty.com/sakazuki/rde_en/index.html">http://homepage2.nifty.com/sakazuki/rde_en/index.html</a></li>
+<li>RubyMine - <a target="_blank" rel="noopener" href="http://www.jetbrains.com/ruby/">http://www.jetbrains.com/ruby/</a></li>
+<li>RadRails - <a target="_blank" rel="noopener" href="http://www.aptana.com/products/radrails">http://www.aptana.com/products/radrails</a></li>
+</ul>
+<h3 id="Interactive-tutorials"><a href="#Interactive-tutorials" class="headerlink" title="Interactive tutorials"></a>Interactive tutorials</h3><ul>
+<li>A Ruby Learning Hub - <a target="_blank" rel="noopener" href="http://rubylearning.org/classes/">http://rubylearning.org/classes/</a></li>
+<li>Codecademy (this site!) - <a target="_blank" rel="noopener" href="http://www.codecademy.com/tracks/ruby">http://www.codecademy.com/tracks/ruby</a></li>
+<li>Code School - <a target="_blank" rel="noopener" href="http://www.codeschool.com/paths/ruby">http://www.codeschool.com/paths/ruby</a></li>
+<li>LearnStreet - <a target="_blank" rel="noopener" href="http://www.learnstreet.com/language/ruby">http://www.learnstreet.com/language/ruby</a></li>
+<li>Ruby Koans Online - <a target="_blank" rel="noopener" href="http://koans.heroku.com/">http://koans.heroku.com/</a></li>
+<li>RubyMonk - Interactive Ruby tutorials - <a target="_blank" rel="noopener" href="http://rubymonk.com/">http://rubymonk.com/</a></li>
+<li>TryRuby - <a target="_blank" rel="noopener" href="http://tryruby.org/">http://tryruby.org</a></li>
+</ul>
+<h3 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h3><ul>
+<li>Cinch: IRC bot building framework - <a target="_blank" rel="noopener" href="https://github.com/cinchrb/cinch">https://github.com/cinchrb/cinch</a></li>
+<li>Shoes: a GUI Toolkit originally developed by the legendary _why - <a target="_blank" rel="noopener" href="http://shoesrb.com/">http://shoesrb.com/</a></li>
+<li>QtRuby: a binding of the application framework Qt for Ruby - <a target="_blank" rel="noopener" href="http://rubyforge.org/projects/korundum/">http://rubyforge.org/projects/korundum/</a></li>
+</ul>
+<h3 id="Newsletters"><a href="#Newsletters" class="headerlink" title="Newsletters"></a>Newsletters</h3><ul>
+<li>Ruby Weekly - <a target="_blank" rel="noopener" href="http://rubyweekly.com/">http://rubyweekly.com/</a></li>
+<li>Green Ruby News - <a target="_blank" rel="noopener" href="http://greenruby.org/">http://greenruby.org/</a></li>
+</ul>
+<h3 id="Online-publications"><a href="#Online-publications" class="headerlink" title="Online publications"></a>Online publications</h3><ul>
+<li>Preiss, Bruno R., “Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby” (2004) - <a target="_blank" rel="noopener" href="http://www.brpreiss.com/books/opus8/">http://www.brpreiss.com/books/opus8/</a></li>
+<li>Sobers, Rob, “Learn Ruby the Hard Way” - <a target="_blank" rel="noopener" href="http://ruby.learncodethehardway.org/book/">http://ruby.learncodethehardway.org/book/</a></li>
+<li>Thomas, David and Andrew Hunt, “Programming Ruby: The Pragmatic Programmer’s Guide (1st ed.)” (2001) - <a target="_blank" rel="noopener" href="http://www.rubycentral.com/pickaxe/">http://www.rubycentral.com/pickaxe/</a> (Ruby 1.8)</li>
+<li>why the lucky stiff, “Why’s (Poignant) Guide to Ruby” - <a target="_blank" rel="noopener" href="http://mislav.uniqpath.com/poignant-guide/">http://mislav.uniqpath.com/poignant-guide/</a></li>
+</ul>
+<h3 id="Online-tutorials"><a href="#Online-tutorials" class="headerlink" title="Online tutorials"></a>Online tutorials</h3><ul>
+<li>Learnable (not free): a library of online books and online courses - <a target="_blank" rel="noopener" href="https://learnable.com/topics/ruby">https://learnable.com/topics/ruby</a></li>
+<li>Nettuts+’s Ruby for Newbies - <a target="_blank" rel="noopener" href="http://net.tutsplus.com/sessions/ruby-for-newbies/">http://net.tutsplus.com/sessions/ruby-for-newbies/</a></li>
+<li>O’Reilly Ruby - <a target="_blank" rel="noopener" href="http://oreillynet.com/ruby/">http://oreillynet.com/ruby/</a></li>
+<li>Ruby Kickstart - <a target="_blank" rel="noopener" href="http://ruby-kickstart.com/">http://ruby-kickstart.com</a></li>
+<li>Ruby Study Hall - <a target="_blank" rel="noopener" href="http://www.rubystudyhall.com/">http://www.rubystudyhall.com/</a></li>
+<li>rubylearning.com’s Ruby Tutorial - <a target="_blank" rel="noopener" href="http://rubylearning.com/">http://rubylearning.com/</a></li>
+<li>ShowMeDo’s Ruby Videos, Tutorials and Screencasts - <a target="_blank" rel="noopener" href="http://showmedo.com/videotutorials/ruby">http://showmedo.com/videotutorials/ruby</a></li>
+<li>TheNewBoston’s Ruby Videos - <a target="_blank" rel="noopener" href="http://thenewboston.org/list.php?cat=50">http://thenewboston.org/list.php?cat=50</a></li>
+</ul>
+<h3 id="Other-platforms"><a href="#Other-platforms" class="headerlink" title="Other platforms"></a>Other platforms</h3><ul>
+<li>JRuby: Ruby on the Java Virtual Machine (JVM) - <a target="_blank" rel="noopener" href="http://jruby.org/">http://jruby.org/</a></li>
+<li>MacRuby - <a target="_blank" rel="noopener" href="http://macruby.org/">http://macruby.org/</a></li>
+<li>RubyMotion - Ruby for iOS - <a target="_blank" rel="noopener" href="http://www.rubymotion.com/">http://www.rubymotion.com/</a></li>
+</ul>
+<h3 id="Podcasts"><a href="#Podcasts" class="headerlink" title="Podcasts"></a>Podcasts</h3><ul>
+<li>Ruby5: The Latest News in the Ruby and Rails Community - <a target="_blank" rel="noopener" href="http://ruby5.envylabs.com/">http://ruby5.envylabs.com/</a></li>
+<li>Ruby Rogues - <a target="_blank" rel="noopener" href="http://rubyrogues.com/">http://rubyrogues.com/</a></li>
+<li>thoughtbot’s Giant Robots Smashing into Other Giant Robots - <a target="_blank" rel="noopener" href="http://learn.thoughtbot.com/podcast">http://learn.thoughtbot.com/podcast</a></li>
+</ul>
+<h3 id="Problems-amp-Puzzles"><a href="#Problems-amp-Puzzles" class="headerlink" title="Problems &amp; Puzzles"></a>Problems &amp; Puzzles</h3><ul>
+<li>codewars: a challenge-based learning tool that has a wide variety of difficulty levels - <a target="_blank" rel="noopener" href="http://www.codewars.com/">http://www.codewars.com</a></li>
+<li>Project Euler: a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve - <a target="_blank" rel="noopener" href="http://projecteuler.net/">http://projecteuler.net/</a></li>
+<li>PuzzleNode: a site for coders who enjoy to work on challenging problems - <a target="_blank" rel="noopener" href="http://www.puzzlenode.com/">http://www.puzzlenode.com/</a></li>
+</ul>
+<h3 id="Quizzes"><a href="#Quizzes" class="headerlink" title="Quizzes"></a>Quizzes</h3><ul>
+<li>Rexaminator: Ruby Online Exam Simulator - <a target="_blank" rel="noopener" href="http://rexaminator.com/">http://rexaminator.com/</a></li>
+<li>Ruby Quiz - <a target="_blank" rel="noopener" href="http://rubyquiz.com/">http://rubyquiz.com/</a></li>
+</ul>
+<h3 id="Terminals"><a href="#Terminals" class="headerlink" title="Terminals"></a>Terminals</h3><ul>
+<li>iTerm 2 (OS X) - <a target="_blank" rel="noopener" href="http://www.iterm2.com/">http://www.iterm2.com/</a></li>
+</ul>
+<h3 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h3><ul>
+<li>Rubular: a Ruby regular expression editor and tester - <a target="_blank" rel="noopener" href="http://rubular.com/">http://rubular.com/</a></li>
+</ul>
+<h3 id="Text-editors"><a href="#Text-editors" class="headerlink" title="Text editors"></a>Text editors</h3><ul>
+<li>GNU Emacs - <a target="_blank" rel="noopener" href="http://www.gnu.org/software/emacs/">http://www.gnu.org/software/emacs/</a></li>
+<li>Notepad++ (Win) - <a target="_blank" rel="noopener" href="http://notepad-plus-plus.org/">http://notepad-plus-plus.org/</a></li>
+<li>Sublime Text 2 - <a target="_blank" rel="noopener" href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a></li>
+<li>TextMate 2 (OS X) - <a target="_blank" rel="noopener" href="http://github.com/textmate/textmate">http://github.com/textmate/textmate</a></li>
+<li>Vim - <a target="_blank" rel="noopener" href="http://www.vim.org/">http://www.vim.org/</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/84a4315c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/posts/84a4315c/" class="post-title-link" itemprop="url">Rails Learning Path</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-07-17 13:30:36" itemprop="dateCreated datePublished" datetime="2013-07-17T13:30:36+08:00">2013-07-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Since I first started learning Rails on March, 2013, I kind of got it now how all those neat little stuff work. MVC architecture is something hard to pick up at first because I have to run into different files to modify my pages and settings. I wonder why I couldn’t just write codes in straight ways like in PHP (maybe I’m just not good enough in PHP to learn MVC at first), but few weeks later, I came to realize by keeping those codes in MVC structure could actually make the overall application organized in a very decent way.</p>
+<p><a target="_blank" rel="noopener" href="http://ruby.railstutorial.org/">Rails Tutorial</a> is the top free resource for learning rails recommended by many StackOverflow users. Of course, I took the recommendation respectfully, so I undoubtfully picked up the book from Amazon. This is a great book, but it kind of forces you to learn everything at once that one has to develop in Rails. I would suggest people reading this book twice because there are still many tips to pick up even though I could still make a web app without implementing those in my codes. However, those tips might include extra security features and nice coding techniques that most developers wouldn’t want to miss out. While those may be quite confusing at first, tips are actually like subjects for intermediate Rails developer. As I progress through the chapters, I become more confident to understand those advanced topics. Therefore, reading it twice really makes me more comfortable at building Rails apps.</p>
+<p>There are still lots to learn in Rails. Testing, MVC, Git and Ruby are still new to me. I believe no one could just learn everything in a month or two (Even I know how they works, I can’t remember them all. After all, I need to remember those main features and type codes at ease like a pro), so I just have to keep on practicing. Look for more resources like Rails Casts and Ruby Programming Language from various authors.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/c8a89c3a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/posts/c8a89c3a/" class="post-title-link" itemprop="url">When Did I Start to Engoy Programming</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-07-17 13:16:23" itemprop="dateCreated datePublished" datetime="2013-07-17T13:16:23+08:00">2013-07-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>I didn’t code quite often when I studied in college first few years. Even though the school was teaching all sorts of programming languages, I was still wondering what I could achieved with all the school trainings. Teachers were just simply giving us out all the boring assignments like mathematical or data structure problems, not telling us how the real world coders were like. After a year of C++ classes, I still had no idea how to program a complete software. Besides, I see none of my classmates building anything interesting at all and the their codes had no stuctures (No OO patterns, No Architectures, just gibberish). Even Facebook founder, Mark Zuckerberg, could build a Facebook in his freshman year which astonished those close to him. (Maybe my college sucks, or maybe just simply Mark learnt how to code in his early age)</p>
+<p>After all, I still enjoy all those computer stuff on the Internet and wonder how they build it. But when did I start building my own web project? Fortunately in 2012, I discovered <a target="_blank" rel="noopener" href="http://www.codecademy.com/">Codedcademy</a>, which gives me a lot of inspiration and after that my progress has grown in a big leap.</p>
+<p>Even though some of the trainings are difficult for me, the excercises are all on-the-hand experiences. I could see the result instantly and all the computer enthusiasts are gathering around the site. They share their obastacles and problems and willing to help other new programmers. It’s a pleasant environment to learn how to code.</p>
+<p>After few months of self trainings, I was hired by a charity group and built a static website for them. With all the help I could get like <a target="_blank" rel="noopener" href="http://stackoverflow.com/">Stack Overflow</a> and Open Source. my website covered with a few animated effects crafted with jQuery and few of my HTML, CSS and JavaScript FrontEnd skills. Since then, I’ve begun to enjoy the beauty of web technology.</p>
+<p>Not until recently, I also discovered another website called <a target="_blank" rel="noopener" href="http://www.codeconquest.com/">Code Conquest</a>. It explains all my doubts and problems. The site provide lots of information for people who want to become a good coder or web developer. And now, I believe I’m more a confident coder than ever before.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/blog/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bernie Chiu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/berniechiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;berniechiu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/berniechewy" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;berniechewy" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

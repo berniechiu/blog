@@ -1,35 +1,426 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"berniechiu.github.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"b2t":false,"scrollpercent":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)產業現況與挑戰 把產品的需求做出來是以前企業的主要利潤 現在目標是增加接單能力，減少客戶流失率  客戶希望從產品得到的價值 產品能幫客戶解決問題，才是有 價值 的產品 設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&gt; 訂出行動方案 -&gt; 立下衡量指標 -&gt; 持續監控 縮短允交 (減少交案的期限，增加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Industrial Information Application Conf 2013 Notes">
+<meta property="og:url" content="https://berniechiu.github.io/blog/posts/a21e1c9b/index.html">
+<meta property="og:site_name" content="BC Blog">
+<meta property="og:description" content="從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)產業現況與挑戰 把產品的需求做出來是以前企業的主要利潤 現在目標是增加接單能力，減少客戶流失率  客戶希望從產品得到的價值 產品能幫客戶解決問題，才是有 價值 的產品 設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&gt; 訂出行動方案 -&gt; 立下衡量指標 -&gt; 持續監控 縮短允交 (減少交案的期限，增加">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-10-04T11:24:20.000Z">
+<meta property="article:modified_time" content="2018-10-14T04:02:22.000Z">
+<meta property="article:author" content="Bernie Chiu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://berniechiu.github.io/blog/posts/a21e1c9b/">
 
 
-{% block content %}
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+  <title>Industrial Information Application Conf 2013 Notes | BC Blog</title>
+  
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% endif %}
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta custom-logo">
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="[object Object]" alt="BC Blog">
+        </a>
+      </div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BC Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Chase Excellence, Success will Follow</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/blog/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://berniechiu.github.io/blog/posts/a21e1c9b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bernie Chiu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Industrial Information Application Conf 2013 Notes
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2013-10-04 19:24:20" itemprop="dateCreated datePublished" datetime="2013-10-04T19:24:20+08:00">2013-10-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="從產業現況出發，探討-ICT-應用如何發揮應有的價值-鼎新電腦顧問"><a href="#從產業現況出發，探討-ICT-應用如何發揮應有的價值-鼎新電腦顧問" class="headerlink" title="從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)"></a>從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)</h2><h4 id="產業現況與挑戰"><a href="#產業現況與挑戰" class="headerlink" title="產業現況與挑戰"></a>產業現況與挑戰</h4><ul>
+<li>把產品的需求做出來是以前企業的主要利潤</li>
+<li>現在目標是增加接單能力，減少客戶流失率</li>
+</ul>
+<h4 id="客戶希望從產品得到的價值"><a href="#客戶希望從產品得到的價值" class="headerlink" title="客戶希望從產品得到的價值"></a>客戶希望從產品得到的價值</h4><ul>
+<li>產品能幫客戶解決問題，才是有 <em>價值</em> 的產品</li>
+<li>設定議題 -&gt; 因果分析 -&gt; 歸納子議題 -&gt; 訂出行動方案 -&gt; 立下衡量指標 -&gt; 持續監控</li>
+<li><em><strong>縮短允交</strong></em> (減少交案的期限，增加競爭力) OS: <strong>聽起來像血汗工廠</strong> Orz<ul>
+<li>   縮短訂單文件簽核</li>
+<li>排程甘特圖</li>
+<li>縮短原物料請購頻率</li>
+<li>按日生產計畫建立驗收優先程序</li>
+<li>合理銷售預測計畫排定</li>
+<li>提早掌握生產進度問題</li>
+</ul>
+</li>
+<li>BOM (Bill of Material) 表用來表達成品、半成品、材料組成和用量的關係</li>
+</ul>
+<h4 id="準時達交的問題行動方案"><a href="#準時達交的問題行動方案" class="headerlink" title="準時達交的問題行動方案"></a>準時達交的問題行動方案</h4><ul>
+<li>掌握關鍵資源供給</li>
+<li>確保計畫落實執行</li>
+<li>強化急單應變能力</li>
+</ul>
+<h2 id="由創新創業談產業電子化之發展趨勢-成大呂教授"><a href="#由創新創業談產業電子化之發展趨勢-成大呂教授" class="headerlink" title="由創新創業談產業電子化之發展趨勢 (成大呂教授)"></a>由創新創業談產業電子化之發展趨勢 (成大呂教授)</h2><h4 id="經營模式"><a href="#經營模式" class="headerlink" title="經營模式"></a>經營模式</h4><ul>
+<li>有時候先尋找 Venture Capital (創投公司) 可以是一開始創業的資金來源</li>
+</ul>
+<h4 id="問題與討論"><a href="#問題與討論" class="headerlink" title="問題與討論"></a>問題與討論</h4><ul>
+<li>因為雲端才有臉書??? 這句話真詭譎…雲端應該是解決網路負載的 Bottleneck 才對…不然其實線上網路軟體的應用在以前其實也已經蠻多的了</li>
+<li>我覺得整體的軟體設計規劃才是台灣所欠缺的，並不是東西(功能)做出來就好了，還要考慮到使用者層面、架構層面(擴充延展性)、體驗層面等等…</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/posts/557f8725/" rel="prev" title="Setup Nginx for Multiple Apps">
+      <i class="fa fa-chevron-left"></i> Setup Nginx for Multiple Apps
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/posts/d5918f3c/" rel="next" title="How to Build And Install Local Ruby Gem">
+      How to Build And Install Local Ruby Gem <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%9E%E7%94%A2%E6%A5%AD%E7%8F%BE%E6%B3%81%E5%87%BA%E7%99%BC%EF%BC%8C%E6%8E%A2%E8%A8%8E-ICT-%E6%87%89%E7%94%A8%E5%A6%82%E4%BD%95%E7%99%BC%E6%8F%AE%E6%87%89%E6%9C%89%E7%9A%84%E5%83%B9%E5%80%BC-%E9%BC%8E%E6%96%B0%E9%9B%BB%E8%85%A6%E9%A1%A7%E5%95%8F"><span class="nav-number">1.</span> <span class="nav-text">從產業現況出發，探討 ICT 應用如何發揮應有的價值 (鼎新電腦顧問)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A2%E6%A5%AD%E7%8F%BE%E6%B3%81%E8%88%87%E6%8C%91%E6%88%B0"><span class="nav-number">1.0.1.</span> <span class="nav-text">產業現況與挑戰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B6%E5%B8%8C%E6%9C%9B%E5%BE%9E%E7%94%A2%E5%93%81%E5%BE%97%E5%88%B0%E7%9A%84%E5%83%B9%E5%80%BC"><span class="nav-number">1.0.2.</span> <span class="nav-text">客戶希望從產品得到的價值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BA%96%E6%99%82%E9%81%94%E4%BA%A4%E7%9A%84%E5%95%8F%E9%A1%8C%E8%A1%8C%E5%8B%95%E6%96%B9%E6%A1%88"><span class="nav-number">1.0.3.</span> <span class="nav-text">準時達交的問題行動方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B1%E5%89%B5%E6%96%B0%E5%89%B5%E6%A5%AD%E8%AB%87%E7%94%A2%E6%A5%AD%E9%9B%BB%E5%AD%90%E5%8C%96%E4%B9%8B%E7%99%BC%E5%B1%95%E8%B6%A8%E5%8B%A2-%E6%88%90%E5%A4%A7%E5%91%82%E6%95%99%E6%8E%88"><span class="nav-number">2.</span> <span class="nav-text">由創新創業談產業電子化之發展趨勢 (成大呂教授)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B6%93%E7%87%9F%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.0.1.</span> <span class="nav-text">經營模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E8%88%87%E8%A8%8E%E8%AB%96"><span class="nav-number">2.0.2.</span> <span class="nav-text">問題與討論</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bernie Chiu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/berniechiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;berniechiu" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/berniechewy" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;berniechewy" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bernie Chiu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
