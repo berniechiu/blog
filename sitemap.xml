@@ -16,35 +16,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/84a4315c/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://berniechiu.github.io/blog/posts/c8a89c3a/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/blog/posts/ceb8c668/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/blog/posts/35c059f2/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/blog/posts/5c7b6b12/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -58,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/d5918f3c/</loc>
+    <loc>https://berniechiu.github.io/blog/posts/ceb8c668/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -72,7 +44,35 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/blog/posts/84a4315c/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/blog/posts/d5918f3c/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/blog/posts/83ba66de/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/blog/posts/467527d0/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/blog/posts/35c059f2/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/467527d0/</loc>
+    <loc>https://berniechiu.github.io/blog/posts/5c7b6b12/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -107,6 +107,13 @@
   </url>
   
   <url>
+    <loc>https://berniechiu.github.io/blog/posts/b541a315/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://berniechiu.github.io/blog/posts/228462e4/</loc>
     
     <lastmod>2018-10-14</lastmod>
@@ -121,21 +128,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/b541a315/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://berniechiu.github.io/blog/posts/751b5e/</loc>
-    
-    <lastmod>2018-10-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://berniechiu.github.io/blog/posts/465cb43f/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -149,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/1db9426/</loc>
+    <loc>https://berniechiu.github.io/blog/posts/465cb43f/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -163,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/posts/4f0bed1f/</loc>
+    <loc>https://berniechiu.github.io/blog/posts/1db9426/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -171,6 +164,13 @@
   
   <url>
     <loc>https://berniechiu.github.io/blog/posts/1db0a039/</loc>
+    
+    <lastmod>2018-10-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://berniechiu.github.io/blog/posts/4f0bed1f/</loc>
     
     <lastmod>2018-10-14</lastmod>
     
@@ -193,14 +193,14 @@
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/tags/ruby/</loc>
+    <loc>https://berniechiu.github.io/blog/tags/devops/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://berniechiu.github.io/blog/tags/devops/</loc>
+    <loc>https://berniechiu.github.io/blog/tags/ruby/</loc>
     <lastmod>2021-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
